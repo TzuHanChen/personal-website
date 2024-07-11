@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import type { Metadata } from "next";
 import { NotoSansTC, NotoSerifTC } from "@/ui/fonts";
+import Header from "@/ui/header";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,9 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-      </head>
-      <body className={NotoSansTC.className}>{children}</body>
+      <head></head>
+      <body className={`relative ${NotoSansTC.className}`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
