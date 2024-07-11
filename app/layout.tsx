@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { NotoSansTC, NotoSerifTC } from "@/ui/fonts";
 import Header from "@/ui/header";
+import Footer from "@/ui/footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={`relative ${NotoSansTC.className}`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
