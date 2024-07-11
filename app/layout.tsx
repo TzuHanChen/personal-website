@@ -20,7 +20,9 @@ export default function RootLayout({
       <head></head>
       <body className={`relative ${NotoSansTC.className}`}>
         <Header />
-        <main className="md:pl-20">{children}</main>
+        <main className="bg-gray-100 py-24 px-6 flex flex-col gap-16 md:ml-20">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
