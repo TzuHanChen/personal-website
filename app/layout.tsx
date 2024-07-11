@@ -20,7 +20,7 @@ export default function RootLayout({
       <head></head>
       <body className={`relative ${NotoSansTC.className}`}>
         <Header />
-        {children}
+        <main className="md:pl-20">{children}</main>
         <Footer />
       </body>
     </html>

@@ -3,7 +3,7 @@ import { MapPinIcon, EnvelopeIcon, CodeBracketIcon } from '@heroicons/react/24/o
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-gray-100 py-12 px-6 flex flex-col justify-center gap-9 text-gray-700 sm:px-12 sm:flex-row">
+    <footer className="mb-20 w-full bg-gray-100 py-12 px-6 flex flex-col justify-center gap-9 text-gray-700 sm:px-12 sm:flex-row md:mb-0 md:pl-32">
       <hr className="max-w-[960px] border-t-none border-b border-b-gray-300" />
 
       <div className="w-full max-w-[960px] flex flex-col justify-between gap-9 sm:flex-row">
