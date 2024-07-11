@@ -1,14 +1,8 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import type { Metadata } from "next";
 import { NotoSansTC, NotoSerifTC } from "@/ui/fonts";
 import Header from "@/ui/header";
 import Footer from "@/ui/footer";
 import "./globals.css";
-
-export const metadata: Metadata = {
-  title: "陳子涵",
-  description: "陳子涵的個人網站",
-};
 
 export default function RootLayout({
   children,
@@ -20,7 +14,7 @@ export default function RootLayout({
       <head></head>
       <body className={`relative ${NotoSansTC.className}`}>
         <Header />
-        <main className="bg-gray-100 py-24 px-6 flex flex-col gap-16 md:ml-20">
+        <main className="bg-gray-100 py-24 px-6 flex flex-col gap-16 md:ml-20 md:px-24 lg:py-36 lg:gap-24">
           {children}
         </main>
         <Footer />
