@@ -14,7 +14,7 @@ export default function RootLayout({
       <head></head>
       <body className={`relative ${NotoSansTC.className}`}>
         <Header />
-        <main className="bg-gray-100 py-24 px-6 flex flex-col gap-16 md:ml-20 md:px-24 lg:py-36 lg:gap-24">
+        <main className="bg-gray-50 py-24 px-6 flex flex-col gap-16 md:ml-20 md:px-24 lg:py-36 lg:gap-24 selection:bg-teal-600 selection:text-gray-50">
           {children}
         </main>
         <Footer />
