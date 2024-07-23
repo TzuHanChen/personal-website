@@ -181,15 +181,17 @@ function Education() {
 }
 
 export default function About() {
-  return <>
-    <Intro />
-    <Career />
-    <Skill />
+  return (
+    <main className="bg-gray-50 py-24 px-6 flex flex-col gap-16 md:ml-20 md:px-24 lg:py-36 lg:gap-24 selection:bg-teal-600 selection:text-gray-50">
+      <Intro />
+      <Career />
+      <Skill />
 
-    <section className="mx-auto w-full max-w-270 flex flex-col gap-16 xl:flex-row xl:gap-24 xl:*:w-1/3">
-      <Certificate />
-      <Recognition />
-      <Education />
-    </section>
-  </>
+      <section className="mx-auto w-full max-w-270 flex flex-col gap-16 xl:flex-row xl:gap-24 xl:*:w-1/3">
+        <Certificate />
+        <Recognition />
+        <Education />
+      </section>
+    </main>
+  )
 }

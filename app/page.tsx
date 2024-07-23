@@ -18,11 +18,11 @@ function Hero() {
 function Project() {
   return (
     <section className="mx-auto w-full max-w-270 flex flex-col gap-6 lg:gap-9">
-        <h2 className="text-4xl text-gray-900 md:text-5xl">專案</h2>
+      <h2 className="text-4xl text-gray-900 md:text-5xl">專案</h2>
 
-        <div>卡片</div>
+      <div>卡片</div>
 
-        <PageButton text="所有專案" href="/project" />
+      <PageButton text="所有專案" href="/project" />
     </section>
   )
 }
@@ -40,9 +40,11 @@ function About() {
 }
 
 export default function Home() {
-  return <>
-    <Hero />
-    <Project />
-    <About />
-  </>
+  return (
+    <main className="bg-gray-50 py-24 px-6 flex flex-col gap-16 md:ml-20 md:px-24 lg:py-36 lg:gap-24 selection:bg-teal-600 selection:text-gray-50">
+      <Hero />
+      <Project />
+      <About />
+    </main>
+  )
 }
