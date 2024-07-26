@@ -22,7 +22,7 @@ function Project() {
 
       <div>卡片</div>
 
-      <PageButton text="所有專案" href="/project" />
+      <PageButton title="所有專案" href="/project" />
     </section>
   )
 }
@@ -34,7 +34,7 @@ function About() {
       <p className="text-gray-700">
         參與過產品開發流程的各項工作後，我選擇以前端工程作為本人職業。<br />
         期許自己能夠利用過往經驗，與來自各領域的同事順利合作。</p>
-      <PageButton text="自我介紹" href="/about" />
+      <PageButton title="自我介紹" href="/about" />
     </section>
   )
 }
