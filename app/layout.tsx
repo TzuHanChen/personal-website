@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import { NotoSansTC, NotoSerifTC } from "@/ui/fonts";
-import Header from "@/ui/header";
-import Footer from "@/ui/footer";
+import { NotoSansTC, NotoSerifTC } from "@/app/ui/fonts";
+import Header from "@/app/ui/header";
+import Footer from "@/app/ui/footer";
 import "./globals.css";
 
 export default function RootLayout({
