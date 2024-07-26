@@ -14,7 +14,7 @@ export default function PageButton(
         {subtitle && <p className="">{subtitle}</p>}
         <p className="text-2xl group-active:text-teal-700">{title}</p>
       </div>
-      <div className="bg-transparent p-2 rounded-full group-active:bg-teal-600">
+      <div className="bg-transparent p-2 rounded-full group-active:bg-teal-700">
         {align == "right"
           ? <ArrowRightIcon className="size-6 stroke-gray-900 group-active:stroke-white" />
           : <ArrowLeftIcon className="size-6 stroke-gray-900 group-active:stroke-white" />}

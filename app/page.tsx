@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageButton from "@/ui/page-button"
+import Card from "@/ui/card";
 
 export const metadata: Metadata = {
   title: "陳子涵",
@@ -20,9 +21,16 @@ function Project() {
     <section className="mx-auto w-full max-w-270 flex flex-col gap-6 lg:gap-9">
       <h2 className="text-4xl text-gray-900 md:text-5xl">專案</h2>
 
-      <div>卡片</div>
+      <div className="flex justify-center gap-6 flex-wrap *:w-full *:max-w-96 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+        <Card imageUrl="" title="標題" description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" />
+        <Card imageUrl="" title="標題" description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" direction="titleFirst" />
+        <Card imageUrl="" title="標題" description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" />
+        <Card imageUrl="" title="標題" description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" direction="titleFirst" />
+        <Card imageUrl="" title="標題" description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" />
 
-      <PageButton title="所有專案" href="/project" />
+        <PageButton title="所有專案" href="/project" />
+      </div>
+
     </section>
   )
 }
