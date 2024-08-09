@@ -17,7 +17,7 @@ export default function Project() {
         </div>
 
         <div className="flex justify-center gap-6 flex-wrap *:w-full *:max-w-96 sm:grid sm:grid-cols-2 lg:grid-cols-3">
-          <Card imageUrl="" title="標題" description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" />
+          <Card href="/project/1" imageUrl="" title="標題" description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" />
           <Card imageUrl="" title="標題" description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" skill="技能 1, 技能 2, 技能 3, 技能 4, 技能 5" direction="titleFirst" />
           <Card imageUrl="" title="標題" description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" />
           <Card imageUrl="" title="標題" description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" skill="技能 1, 技能 2, 技能 3, 技能 4, 技能 5" direction="titleFirst" />
