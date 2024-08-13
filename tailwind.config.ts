@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       spacing: {
         '144': '36rem',
+        '192': '48rem',
         '270': '67.5rem'
       }
     },

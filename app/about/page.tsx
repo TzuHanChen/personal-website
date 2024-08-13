@@ -9,7 +9,8 @@ function Intro() {
   return (
     <section className="flex flex-col gap-6">
       <div className="flex flex-col justify-center items-center gap-6 md:flex-row">
-        <img src="photo.png" alt="photo" className="size-28 rounded-full bg-gray-200" />
+        <img src="photo.png" alt="photo" title="photo"
+          className="size-28 rounded-full bg-gray-200" />
         <div>
           <h1 className="mb-1 text-2xl text-center text-gray-900 md:text-3xl">你好，我是陳子涵</h1>
           <p className="text-2xl text-center text-gray-900 md:text-3xl">現在是前端工程師</p>
