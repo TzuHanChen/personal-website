@@ -21,13 +21,8 @@ function Member({ name, role, skill }:
   )
 }
 
-export default function Members() {
-  const data = [
-    { name: "我", role: "網站後端", skill: "XAMPP, PHP, MySQL" },
-    { name: "同學", role: "網站前端", skill: "Vue.js" },
-    { name: "同學", role: "網站前端", skill: "Vue.js" },
-    { name: "同學", role: "網站前端", skill: "Vue.js" },
-  ];
+export default function Members({ data }:
+  { data: { name: string, role: string, skill: string }[] }) {
 
   return (
     <div className="mx-auto w-full max-w-192">
