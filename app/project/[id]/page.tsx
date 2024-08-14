@@ -1,4 +1,5 @@
 import Members from "@/app/ui/member";
+import Timeline from "@/app/ui/timeline";
 
 export default function Page({ params }: { params: { id: string } }) {
   const memberData = [
@@ -19,6 +20,8 @@ export default function Page({ params }: { params: { id: string } }) {
     <Members data={memberData} />
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit at facilis ab voluptatum dolor repudiandae itaque? Autem, ipsam beatae incidunt aliquid mollitia sed laudantium illo quod dignissimos quas reprehenderit reiciendis!</p>
+
+    <Timeline start="2020/07" period="一個月" end="2020/08" />
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit at facilis ab voluptatum dolor repudiandae itaque? Autem, ipsam beatae incidunt aliquid mollitia sed laudantium illo quod dignissimos quas reprehenderit reiciendis!</p>
   </section>

@@ -4,7 +4,7 @@ import { UserCircleIcon } from '@heroicons/react/24/outline';
 function Member({ name, role, skill }:
   { name: string, role: string, skill: string }) {
   return (
-    <div className={clsx("bg-white rounded-xl p-3 flex flex-col items-center gap-3", (name == "我") ? "text-gray-900" : "text-gray-600", "md:p-6")}>
+    <div className={clsx("rounded-xl bg-white p-3 flex flex-col items-center gap-3", (name == "我") ? "text-gray-900" : "text-gray-600", "md:p-6")}>
       <div className="flex items-center gap-1.5">
         {(name == "我")
           ? <img src="photo.png" alt="photo" title="photo"
