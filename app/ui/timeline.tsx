@@ -22,7 +22,7 @@ function Time({ stage, text }: { stage: string, text: string }) {
     <div className={clsx("flex flex-col items-center text-center",
       (stage == "時程") ? "text-gray-900" : "text-gray-600")}>
       <p>{stage}</p>
-      <div className={clsx("my-1.5 size-9 rounded-full bg-gray-200 flex items-center justify-center", (stage == "時程") ? "bg-gray-900" : "bg-gray-600")}>
+      <div className={clsx("my-1.5 size-9 rounded-full flex items-center justify-center", (stage == "時程") ? "bg-gray-900" : "bg-gray-600")}>
         {icon}
       </div>
       <p className="text-lg md:text-xl lg:text-2xl">{text}</p>
