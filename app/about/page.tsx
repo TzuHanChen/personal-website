@@ -12,11 +12,15 @@ function Intro() {
         <img src="photo.png" alt="photo" title="photo"
           className="size-28 rounded-full bg-gray-200" />
         <div>
-          <h1 className="mb-1 text-2xl text-center text-gray-900 md:text-3xl">你好，我是陳子涵</h1>
-          <p className="text-2xl text-center text-gray-900 md:text-3xl">現在是前端工程師</p>
+          <h1 className="mb-1 text-2xl text-center text-gray-900 md:text-3xl">
+            你好，我是陳子涵</h1>
+          <p className="text-2xl text-center text-gray-900 md:text-3xl">
+            現在是前端工程師</p>
         </div>
       </div>
-      <p className="mx-auto w-full max-w-144 text-gray-600">　　我目前使用 Next.js, React, Tailwind CSS, styled-components, TypeScript 等工具，完成公司與新創的各項專案功能。之前有接觸過介面設計、使用者體驗、後端開發，現在仍有持續利用過往經歷，與負責這些職位的夥伴討論、溝通與合作。如果你想找我聊聊新的合作機會，請聯繫我！</p>
+      <p className="mx-auto w-full max-w-144 text-gray-600">
+        {"　　"}我目前使用 Next.js, React, Tailwind CSS, React Hook Form 等工具，完成公司任務與業餘專案的各項畫面與功能。之前有接觸過介面設計、使用者體驗、後端開發，現在仍有持續利用過往經歷，與負責這些職位的夥伴討論、溝通與合作。如果你想找我聊聊新的合作機會，請聯繫我！
+      </p>
     </section>
   )
 }
@@ -28,9 +32,9 @@ function Career() {
       company: '樂倍達數位科技股份有限公司',
       timeline: '2023/09 ~ 現今',
       description: [
-        '參與客戶公司的專案開發（視訊會議網站），使用 styled-components + Transifex 調整介面與功能，撰寫 Playwright 自動化測試腳本。',
-        '於客戶公司專案新增功能之前，整合客戶需求和自己公司同事研究後得知的技術可行性，製作流程圖和線框圖，再實作前端畫面與功能。',
-        '參與自己公司的兩個產品開發（商品試用網站、電商服務平台），針對介面設計稿提出前端技術可行性建議，使用 Tailwind CSS + JavaScript 切版、實作功能。'
+        '參與客戶公司的專案開發 (視訊會議網站)，使用 React + styled-components 調整介面與功能, 使用 Transifex 串接多語系字串。於新增功能之前，整合客戶需求和自己公司同事研究後得知的技術可行性，製作流程圖和線框圖，再實作畫面與功能、串接客戶提供的 API。原本手動回歸測試耗時 40 分鐘，撰寫 Playwright 自動化腳本，耗時縮減至 5 分鐘。',
+        '參與客戶公司的新增功能開發(網路電話彈出視窗)，根據客戶需求和客戶公司提供的 Next.js + SIP.js 專案，製作流程圖和線框圖，再加入 Tailwind CSS + Headless UI + Web API(MediaStream, AudioContext) 實作畫面與功能。',
+        '參與一個客戶專案開發（建商房客資訊管理網站），兩個公司產品開發（商品試用網站、電商自選服務平台），使用 HTML, Tailwind CSS, JavaScript 切版、實作功能。'
       ]
     },
     {
@@ -39,8 +43,11 @@ function Career() {
       timeline: '2022/09 ~ 現今',
       description: [
         'Teamie 是一個業餘專案，致⼒為學⽣及初⼊職場的新鮮人媒合專案夥伴，打造跨專業、跨地區的合作機會。',
-        '使用 Next.js + Tailwind CSS + TypeScript 製作頁面、實作功能。',
-        '參與前期使用者訪談、網站架構與功能操作流程規畫，針對介面設計稿提出前端技術可行性建議，與後端夥伴合作規劃所需資料表。'
+        '使用 Next.js + Tailwind CSS + TypeScript + clsx + Feather Icons + Headless UI 製作元件與頁面、實作各項功能。',
+        '與後端夥伴合作規劃所需資料表、調整 API 規格，再根據 Swagger 文件，使用 React Hook Form 串接 RESTful API 實作各種表單、處理錯誤訊息。',
+        '在 Zeabur 專案中新增兩個前端服務，設定相同 GitHub repo 的不同分支，分別自動部署到測試版與正式版網址。',
+        '參與前期使用者訪談、需求分析、網站架構與功能操作流程規畫，針對介面設計稿提出前端技術可行性建議。',
+        '撰寫前端 Markdown 文件，利用此文件與原始碼向新加入的前端夥伴說明，目前網站有使用的工具、已完成的功能、撰寫程式碼須注意的規範。'
       ]
     },
     {
