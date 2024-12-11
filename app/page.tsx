@@ -22,11 +22,16 @@ function Project() {
       <h2 className="text-4xl text-gray-900 md:text-5xl">專案</h2>
 
       <div className="flex justify-center gap-6 flex-wrap *:w-full *:max-w-96 sm:grid sm:grid-cols-2 lg:grid-cols-3">
-        <Card href="/project/1" imageUrl="" title="標題" description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" />
-        <Card imageUrl="" title="標題" description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" skill="技能 1, 技能 2, 技能 3, 技能 4, 技能 5" direction="titleFirst" />
-        <Card imageUrl="" title="標題" description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" />
-        <Card imageUrl="" title="標題" description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" skill="技能 1, 技能 2, 技能 3, 技能 4, 技能 5" direction="titleFirst" />
-        <Card imageUrl="" title="標題" description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" skill="技能 1, 技能 2, 技能 3, 技能 4, 技能 5" />
+        <Card href="/project/1" imageUrl="" title="標題"
+          description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" />
+        <Card href="/project/test" imageUrl="" title="標題"
+          description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" skill="技能 1, 技能 2, 技能 3, 技能 4, 技能 5" direction="titleFirst" />
+        <Card imageUrl="" title="標題"
+          description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" />
+        <Card imageUrl="" title="標題"
+          description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" skill="技能 1, 技能 2, 技能 3, 技能 4, 技能 5" direction="titleFirst" />
+        <Card imageUrl="" title="標題"
+          description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" skill="技能 1, 技能 2, 技能 3, 技能 4, 技能 5" />
 
         <PageButton title="所有專案" href="/project" />
       </div>

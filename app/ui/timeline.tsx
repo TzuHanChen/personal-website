@@ -6,14 +6,18 @@ function Time({ stage, text }: { stage: string, text: string }) {
   switch (stage) {
     case "開始":
       icon = <DocumentIcon className="size-6 stroke-white" />
+      icon = <DocumentIcon className="size-6 stroke-white" />
       break;
     case "時程":
+      icon = <CalendarDateRangeIcon className="size-6 stroke-white" />
       icon = <CalendarDateRangeIcon className="size-6 stroke-white" />
       break;
     case "結束":
       icon = <CheckBadgeIcon className="size-6 stroke-white" />
+      icon = <CheckBadgeIcon className="size-6 stroke-white" />
       break;
     default:
+      icon = <div className='size-6 rounded-full bg-gray-200'></div>
       icon = <div className='size-6 rounded-full bg-gray-200'></div>
       break;
   }
