@@ -1,3 +1,15 @@
+export async function generateStaticParams() {
+  // const projects = await fetch('https://.../projects').then((res) => res.json())
+  const projects = [{ id: '1' }, { id: 'test' }];
+
+  // return projects.map((project) => ({
+  //   id: project.id,
+  // }));
+  return projects;
+}
+
+export const dynamicParams = false;
+
 function ProjectSideBar({ projectId }: { projectId: string }) {
   return (
     <div className="py-24 px-6 flex flex-col gap-6 md:px-24 lg:sticky lg:top-0 lg:w-96 lg:h-screen lg:py-36 lg:px-12">
