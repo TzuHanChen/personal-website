@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "關於我 | 陳子涵",
@@ -9,8 +10,8 @@ function Intro() {
   return (
     <section className="flex flex-col gap-6">
       <div className="flex flex-col justify-center items-center gap-6 md:flex-row">
-        <img src="photo.png" alt="photo" title="photo"
-          className="size-28 rounded-full bg-gray-200" />
+        <Image src="/photo.jpg" alt="photo"
+          width={96} height={96} className="size-24 rounded-full" />
         <div>
           <h1 className="mb-1 text-2xl text-center text-gray-900 md:text-3xl">
             你好，我是陳子涵</h1>
@@ -33,7 +34,7 @@ function Career() {
       timeline: '2023/09 ~ 現今',
       description: [
         '參與客戶公司的專案開發 (視訊會議網站)，使用 React + styled-components 調整介面與功能, 使用 Transifex 串接多語系字串。於新增功能之前，整合客戶需求和自己公司同事研究後得知的技術可行性，製作流程圖和線框圖，再實作畫面與功能、串接客戶提供的 API。原本手動回歸測試耗時 40 分鐘，撰寫 Playwright 自動化腳本，耗時縮減至 5 分鐘。',
-        '參與客戶公司的新增功能開發(網路電話彈出視窗)，根據客戶需求和客戶公司提供的 Next.js + SIP.js 專案，製作流程圖和線框圖，再加入 Tailwind CSS + Headless UI + Web API(MediaStream, AudioContext) 實作畫面與功能。',
+        '參與客戶公司的新增功能開發(網路電話彈出視窗)，根據客戶需求和客戶公司提供的 Next.js + SIP.js 專案，製作流程圖和線框圖，再加入 Tailwind CSS + Headless UI + Web API (MediaStream, AudioContext) 實作畫面與功能。',
         '參與一個客戶專案開發（建商房客資訊管理網站），兩個公司產品開發（商品試用網站、電商自選服務平台），使用 HTML, Tailwind CSS, JavaScript 切版、實作功能。'
       ]
     },
@@ -105,7 +106,7 @@ function Skill() {
   const content = [
     {
       skill: '網站前端',
-      tool: 'Next.js, React, Tailwind CSS, styled-components, TypeScript'
+      tool: 'Next.js, React, Tailwind CSS, Headless UI, React Hook Form, styled-components, TypeScript'
     },
     {
       skill: '版本控制',
@@ -113,28 +114,39 @@ function Skill() {
     },
     {
       skill: '部署',
-      tool: 'Vercel, GitHub Pages'
+      tool: 'Zeabur, Vercel'
     },
     {
       skill: '使用者體驗、介面設計',
-      tool: 'FigJam, Figma'
+      tool: 'FigJam, Figma, Penpot'
     }
   ]
   return (
-    <section className="mx-auto max-w-144 flex flex-col gap-6">
+    <section className="mx-auto flex flex-col gap-6 xl:max-w-144">
       <h2 className="text-4xl text-gray-900 lg:text-5xl">技能</h2>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="flex flex-col gap-6 md:flex-row">
+        <div className="md:w-1/2">
+          <h3 className="mb-3 text-2xl text-gray-900">{content[0].skill}</h3>
+          <p className="text-gray-600">{content[0].tool}</p>
+        </div>
 
-        {content.map((item, index) => {
-          return (
-            <div key={index}>
-              <h3 className="mb-3 text-2xl text-gray-900">{item.skill}</h3>
-              <p className="text-gray-600">{item.tool}</p>
-            </div>
-          )
-        })}
+        <div className="flex flex-col gap-6 md:w-1/2">
+          <div>
+            <h3 className="mb-3 text-2xl text-gray-900">{content[1].skill}</h3>
+            <p className="text-gray-600">{content[1].tool}</p>
+          </div>
 
+          <div>
+            <h3 className="mb-3 text-2xl text-gray-900">{content[2].skill}</h3>
+            <p className="text-gray-600">{content[2].tool}</p>
+          </div>
+
+          <div>
+            <h3 className="mb-3 text-2xl text-gray-900">{content[3].skill}</h3>
+            <p className="text-gray-600">{content[3].tool}</p>
+          </div>
+        </div>
       </div>
     </section>
   )
