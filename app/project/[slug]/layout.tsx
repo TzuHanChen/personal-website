@@ -1,12 +1,12 @@
 type Params = Promise<{ slug: string }>;
 
 export async function generateStaticParams() {
-  const slugs = [{ slug: '1' }, { slug: 'teamie' }];
-  // const slugs = await fetch('/get-project-slugs').then((res) => res.json());
+  // const slugs = [{ slug: '1' }, { slug: 'test' }, { slug: 'teamie' }];
+  const slugs = await fetch(
+    process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-slugs'
+  ).then((res) => res.json());
+  console.log(slugs);
 
-  // return projects.map((project) => ({
-  //   slug: project.slug,
-  // }));
   return slugs;
 }
 
