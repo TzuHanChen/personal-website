@@ -26,7 +26,7 @@ function Project() {
           description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" />
         <Card href="/project/test" imageUrl="" title="標題"
           description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" skill="技能 1, 技能 2, 技能 3, 技能 4, 技能 5" direction="titleFirst" />
-        <Card imageUrl="" title="標題"
+        <Card href="/project/teamie" imageUrl="" title="Teamie"
           description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" />
         <Card imageUrl="" title="標題"
           description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" skill="技能 1, 技能 2, 技能 3, 技能 4, 技能 5" direction="titleFirst" />
