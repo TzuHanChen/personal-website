@@ -2,7 +2,7 @@ import { Project } from "@/app/type";
 
 export async function GET() {
   const res = await fetch(
-    process.env.NEXT_PUBLIC_FRONTEND_URL + '/project-data.json',
+    process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/project-data',
     { headers: { 'Content-Type': 'application/json' } }
   ).then(res => res.json());
 
