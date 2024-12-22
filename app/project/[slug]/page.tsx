@@ -4,6 +4,8 @@ import Output from "@/app/ui/output";
 import PageButton from "@/app/ui/page-button";
 import getHTML from '@/app/lib/markdown-to-html';
 
+type Params = Promise<{ slug: string }>;
+
 async function Content({ filename }: { filename: string }) {
   let content = '';
   try {
@@ -21,7 +23,9 @@ async function Content({ filename }: { filename: string }) {
   )
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default async function ProjectPage({ params }: { params: Params }) {
+  const slug = (await params).slug;
+
   const memberData = [
     { name: "我", role: "網站後端", skill: "XAMPP, PHP, MySQL" },
     { name: "同學", role: "網站前端", skill: "Vue.js" },
@@ -40,7 +44,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
       <Output items={["uxr", "flow", "ui", "pro", "page", "site"]} />
 
-      <Content filename={params.slug} />
+      <Content filename={slug} />
 
       <div className="w-full flex flex-col gap-6 md:flex-row *:flex-1">
         <PageButton title="專案名稱" subtitle="上一個專案" align="left" href="" />
