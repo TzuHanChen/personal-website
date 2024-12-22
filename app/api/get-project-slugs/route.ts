@@ -1,11 +1,12 @@
-export async function GET(request: Request) {
+import { Project } from "@/app/type";
+
+export async function GET() {
   const res = await fetch(
     process.env.NEXT_PUBLIC_FRONTEND_URL + '/project-data.json',
     { headers: { 'Content-Type': 'application/json' } }
-  );
-  const data = await res.json();
+  ).then(res => res.json());
 
-  const slugs = data.map((project: { slug: string }) => {
+  const slugs = res.map((project: Project) => {
     return { slug: project.slug }
   });
 
