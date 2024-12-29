@@ -3,7 +3,7 @@ import { Project } from "@/app/type";
 
 export async function GET(request: NextRequest) {
   const req = request.nextUrl.searchParams;
-  console.log(req);
+  // console.log(req);
 
   if (!req.get('slug')) {
     return Response.json({ message: "slug not provided" }, { status: 404 });
