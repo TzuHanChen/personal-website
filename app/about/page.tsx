@@ -10,7 +10,7 @@ function Intro() {
   return (
     <section className="flex flex-col gap-6">
       <div className="flex flex-col justify-center items-center gap-6 md:flex-row">
-        <Image src="/photo.jpg" alt="photo"
+        <Image src="/image/photo.jpg" alt="陳子涵的照片" title="陳子涵的照片"
           width={96} height={96} className="size-24 rounded-full" />
         <div>
           <h1 className="mb-1 text-2xl text-center text-gray-900 md:text-3xl">

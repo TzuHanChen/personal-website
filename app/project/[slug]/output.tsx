@@ -1,4 +1,5 @@
 import { UserIcon, ArrowRightIcon, PencilIcon, PaintBrushIcon, DocumentTextIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline';
+import { Project } from "@/app/type";
 
 /**
  * 產出項目
@@ -35,23 +36,23 @@ function Item({ data }: { data: string }) {
   }
 
   return (
-    <div className="rounded-xl bg-white aspect-square p-1.5 flex flex-col justify-center items-center text-center gap-1.5 md:p-3">
-      <div className="size-9 rounded-full flex items-center justify-center bg-gray-600">
+    <div className="rounded-xl bg-white min-w-28 aspect-square p-1.5 flex flex-col justify-center items-center text-center gap-1.5 md:min-w-32 md:p-3">
+      <div className="size-9 rounded-full flex items-center justify-center bg-gray-500">
         {icon}
       </div>
-      <p className="text-gray-600 text-base md:text-xl">{text}</p>
+      <p className="text-gray-500 text-base md:text-xl">{text}</p>
     </div>
   )
 }
 
-export default function Output({ items }: { items: string[] }) {
+export default function Outputs({ outputs }: { outputs: Project["outputs"] }) {
 
   return (
     <div className="mx-auto">
       <h2 className="mb-6 text-2xl text-gray-900 text-center md:mb-9 md:text-3xl lg:text-4xl">
         產出</h2>
-      <div className="grid grid-cols-3 gap-3">
-        {items.map((data, index) => {
+      <div className="flex flex-wrap justify-center gap-3">
+        {outputs.map((data, index) => {
           return <Item data={data} key={index} />
         })}
       </div>
