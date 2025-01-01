@@ -1,29 +1,29 @@
 import type { Metadata } from "next";
 import { Project } from "@/app/type";
+import NotFound from "@/app/not-found";
 
 type Params = Promise<{ slug: string }>;
-
-export async function generateStaticParams() {
-  const slugs = await fetch(
-    process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-slugs'
-  ).then((res) => res.json());
-
-  return slugs;
-}
-export const dynamicParams = false;
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const slug = (await params).slug;
 
-  const project = await fetch(
+  const res = await fetch(
     process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-content' + `?slug=${slug}`
-  ).then((res) => res.json());
+  );
+  const project = await res.json();
 
-  return {
-    title: `${project.name} | 陳子涵`,
-    description: project.description,
-    openGraph: {
-      images: process.env.NEXT_PUBLIC_FRONTEND_URL + '/' + project.keyVisual
+  if (res.ok) {
+    return {
+      title: `${project.name} | 陳子涵`,
+      description: project.description,
+      openGraph: {
+        images: process.env.NEXT_PUBLIC_FRONTEND_URL + '/' + project.keyVisual
+      }
+    }
+  } else {
+    return {
+      title: "404 | 陳子涵",
+      description: "404 Not Found",
     }
   }
 }
@@ -43,14 +43,19 @@ export default async function ProjectLayout({ children, params }:
   { children: React.ReactNode, params: Params }) {
   const { slug } = await params;
 
-  const data = await fetch(
+  const res = await fetch(
     process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-content' + `?slug=${slug}`
-  ).then((res) => res.json());
+  );
+  const project = await res.json();
 
-  return (
-    <main className="min-h-screen bg-gray-50 md:ml-20 selection:bg-teal-600 selection:text-gray-50 lg:flex">
-      <ProjectSideBar {...data} />
-      {children}
-    </main>
-  )
+  if (res.ok) {
+    return (
+      <main className="min-h-screen bg-gray-50 md:ml-20 selection:bg-teal-600 selection:text-gray-50 lg:flex">
+        <ProjectSideBar {...project} />
+        {children}
+      </main>
+    )
+  } else {
+    return <NotFound />
+  }
 }
