@@ -2,8 +2,8 @@ import Image from "next/image";
 import Members from "@/app/project/[slug]/members";
 import Timeline from "@/app/project/[slug]/timeline";
 import Outputs from "@/app/project/[slug]/output";
+import ReactMarkdown from 'react-markdown';
 import PageButton from "@/app/ui/page-button";
-import ReactMarkdown from 'react-markdown'
 
 type Params = Promise<{ slug: string }>;
 
@@ -18,6 +18,21 @@ async function Content({ slug }: { slug: string }) {
       [&>h3]:my-4 [&>h3]:text-gray-900 [&>h3]:text-lg [&>h3]:md:text-xl [&>h3]:lg:text-2xl
       [&>p]:my-2 [&>p]:text-gray-600">
       <ReactMarkdown>{markdown}</ReactMarkdown>
+    </div>
+  )
+}
+
+async function PrevNext({ slug }: { slug: string }) {
+  const data = await fetch(
+    process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-prevnext' + `?slug=${slug}`
+  ).then(res => res.json());
+
+  return (
+    <div className="mx-auto w-full max-w-192 flex flex-col gap-6 md:flex-row *:flex-1">
+      <PageButton title={data.prev.name} subtitle="上一個專案" align="left"
+        href={`/project/${data.prev.slug}`} />
+      <PageButton title={data.next.name} subtitle="下一個專案" align="right"
+        href={`/project/${data.next.slug}`} />
     </div>
   )
 }
@@ -44,10 +59,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
 
       <Content slug={slug} />
 
-      <div className="mx-auto w-full max-w-192 flex flex-col gap-6 md:flex-row *:flex-1">
-        <PageButton title="專案名稱" subtitle="上一個專案" align="left" href="" />
-        <PageButton title="專案名稱" subtitle="下一個專案" align="right" href="" />
-      </div>
+      <PrevNext slug={slug} />
     </section>
   )
 }

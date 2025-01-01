@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageButton from "@/app/ui/page-button"
 import Card from "@/app/ui/card";
+import { Project } from "@/app/type";
 
 export const metadata: Metadata = {
   title: "陳子涵",
@@ -16,22 +17,24 @@ function Hero() {
   )
 }
 
-function Project() {
+async function Projects() {
+  const res = await fetch(
+    process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-list' + '?count=5'
+  );
+  const projects = await res.json();
+
   return (
     <section className="mx-auto w-full max-w-270 flex flex-col gap-6 lg:gap-9">
       <h2 className="text-4xl text-gray-900 md:text-5xl">專案</h2>
 
       <div className="flex justify-center gap-6 flex-wrap *:w-full *:max-w-96 sm:grid sm:grid-cols-2 lg:grid-cols-3">
-        <Card href="/project/1" imageUrl="" title="標題"
-          description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" />
-        <Card href="/project/test" imageUrl="" title="標題"
-          description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" skill="技能 1, 技能 2, 技能 3, 技能 4, 技能 5" direction="titleFirst" />
-        <Card href="/project/teamie" imageUrl="" title="Teamie"
-          description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" />
-        <Card imageUrl="" title="標題"
-          description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" skill="技能 1, 技能 2, 技能 3, 技能 4, 技能 5" direction="titleFirst" />
-        <Card imageUrl="" title="標題"
-          description="這是一段描述，這是一段描述，這是一段描述，這是一段描述" skill="技能 1, 技能 2, 技能 3, 技能 4, 技能 5" />
+        {projects.map((project: Project) => {
+          return (
+            <Card key={project.slug} href={`/project/${project.slug}`}
+              imageUrl={`/image/${project.keyVisual}`}
+              title={project.name} description={project.description} />
+          )
+        })}
 
         <PageButton title="所有專案" href="/project" />
       </div>
@@ -56,7 +59,7 @@ export default function Home() {
   return (
     <main className="bg-gray-50 py-24 px-6 flex flex-col gap-16 md:ml-20 md:px-24 lg:py-36 lg:gap-24 selection:bg-teal-600 selection:text-gray-50">
       <Hero />
-      <Project />
+      <Projects />
       <About />
     </main>
   )

@@ -18,6 +18,22 @@ const data = [
       "end": "進行中"
     },
     "outputs": ["uxr", "flow", "ui", "site"]
+  },
+  {
+    "slug": "test",
+    "name": "Test",
+    "description": "Test",
+    "skill": "Next.js",
+    "keyVisual": "test.png",
+    "members": [
+      { name: "我", role: "網站前端" },
+    ],
+    "timeline": {
+      "start": "2022/22",
+      "period": "進行中",
+      "end": "進行中"
+    },
+    "outputs": ["site"]
   }
 ];
 
