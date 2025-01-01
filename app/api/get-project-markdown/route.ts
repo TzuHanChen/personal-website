@@ -18,7 +18,10 @@ export async function GET(request: NextRequest) {
     });
 
     if (project) {
-      return Response.json(project);
+      const file = await fetch(
+        process.env.NEXT_PUBLIC_FRONTEND_URL + '/markdown/' + slug + '.md',
+      );
+      return file;
     } else {
       return Response.json({ message: "slug does not exist" }, { status: 404 });
     }
