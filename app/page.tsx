@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: "陳子涵的個人網站",
 };
 
+export const dynamic = 'force-dynamic';
+
 function Hero() {
   return (
     <section className="mx-auto w-full max-w-270 rounded-3xl bg-white py-12 px-6 text-gray-900">
