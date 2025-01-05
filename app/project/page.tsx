@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "陳子涵的專案",
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function Projects() {
   const res = await fetch(
     process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-list'
