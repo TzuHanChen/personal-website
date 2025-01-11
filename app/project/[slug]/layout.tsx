@@ -50,7 +50,7 @@ export default async function ProjectLayout({ children, params }:
 
   if (res.ok) {
     return (
-      <main className="min-h-screen bg-gray-50 md:ml-20 selection:bg-teal-600 selection:text-gray-50 lg:flex">
+      <main className="min-h-screen bg-gray-50 md:ml-20 selection:bg-teal-700 selection:text-teal-100 lg:flex">
         <ProjectSideBar {...project} />
         {children}
       </main>
