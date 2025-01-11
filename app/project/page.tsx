@@ -16,7 +16,7 @@ export default async function Projects() {
   const projects = await res.json();
 
   return (
-    <main className="bg-gray-50 py-24 px-6 flex flex-col gap-16 md:ml-20 md:px-24 lg:py-36 lg:gap-24 selection:bg-teal-700 selection:text-teal-100">
+    <main className="bg-gray-50 py-24 px-6 flex flex-col gap-16 md:ml-20 md:px-24 lg:py-36 lg:gap-24">
 
       <section className="mx-auto w-full max-w-270 flex flex-col gap-6 lg:gap-9">
         <div className="flex flex-col gap-6">
