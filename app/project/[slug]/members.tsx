@@ -4,14 +4,14 @@ import { UserCircleIcon } from '@heroicons/react/24/solid';
 import { Project } from "@/app/type";
 
 function Member({ name, role }: { name: string, role: string }) {
-  const icon = (name == "我")
-    ? <Image src="/image/my-icon.svg" alt="陳子涵的照片" title="陳子涵的照片"
+  const icon = (name === "我")
+    ? <Image src="/icon.svg" alt="陳子涵的照片" title="陳子涵的照片"
       width={36} height={36} className="size-9 rounded-full bg-gray-200" />
     : <UserCircleIcon className='size-9 fill-gray-500' />;
 
   return (
     <div className={clsx("rounded-xl bg-white p-6 flex flex-col gap-3",
-      (name == "我") ? "text-gray-800" : "text-gray-500")}>
+      (name === "我") ? "text-gray-800" : "text-gray-500")}>
       <div className="flex items-center gap-1.5">
         {icon}
         <p>{name}</p>

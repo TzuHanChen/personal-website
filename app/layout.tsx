@@ -9,7 +9,7 @@ export default function RootLayout({ children }:
   return (
     <html lang="zh-TW">
       <head></head>
-      <body className={`relative ${NotoSansTC.className}`}>
+      <body className={`relative ${NotoSansTC.className} selection:bg-teal-700 selection:text-teal-100`}>
         <Header />
         {children}
         <Footer />
