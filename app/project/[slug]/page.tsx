@@ -16,7 +16,8 @@ async function Content({ slug }: { slug: string }) {
     <div className="mx-auto w-full max-w-192
       [&>h2]:my-6 [&>h2]:text-gray-900 [&>h2]:text-2xl [&>h2]:md:text-3xl [&>h2]:lg:text-4xl
       [&>h3]:my-4 [&>h3]:text-gray-900 [&>h3]:text-lg [&>h3]:md:text-xl [&>h3]:lg:text-2xl
-      [&>p]:my-2 [&>p]:text-gray-600">
+      [&>p]:my-2 [&>p]:text-gray-600
+      [&>hr]:my-24 [&>hr]:border-gray-300">
       <ReactMarkdown>{markdown}</ReactMarkdown>
     </div>
   )

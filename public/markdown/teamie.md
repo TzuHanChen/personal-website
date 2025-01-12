@@ -1,13 +1,25 @@
-## h2
+## 緣起
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit at facilis ab voluptatum dolor repudiandae itaque? Autem, ipsam beatae incidunt aliquid mollitia sed laudantium illo quod dignissimos quas reprehenderit reiciendis!
+　　加入此專案前的某一天，偶然在社群媒體上看到核心夥伴的貼文，內容包括專案簡介以及正在招募夥伴的訊息。這個專案的目標是想要打造一個平台以協助學生、社會新鮮人以及新創團隊，在這個平台上發布專案、招募夥伴、展示專案成果，促成跨專業、跨地區的合作機會。因為我自己有在求學階段注意到專案實作和跨領域合作的重要性，於是報名加入，期望能夠在參與專案的過程中提升自我能力，同時幫助到有相同需求的人們。
 
-### h3
+---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit at facilis ab voluptatum dolor repudiandae itaque? Autem, ipsam beatae incidunt aliquid mollitia sed laudantium illo quod dignissimos quas reprehenderit reiciendis!
+## 專案開發流程
 
-## h2
+### 使用者訪談
 
-### h3
+### 人物誌
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit at facilis ab voluptatum dolor repudiandae itaque? Autem, ipsam beatae incidunt aliquid mollitia sed laudantium illo quod dignissimos quas reprehenderit reiciendis!
+### 功能規劃
+
+### 資料架構
+
+### 流程規劃
+
+### 介面設計
+
+### 後端開發
+
+---
+
+## 前端開發
