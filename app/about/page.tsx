@@ -33,8 +33,8 @@ function Career() {
       company: '樂倍達數位科技股份有限公司',
       timeline: '2023/09 ~ 現今',
       description: [
-        '參與客戶公司的專案開發 (視訊會議網站)，使用 React + styled-components 調整介面與功能, 使用 Transifex 串接多語系字串。於新增功能之前，整合客戶需求和自己公司同事研究後得知的技術可行性，製作流程圖和線框圖，再實作畫面與功能、串接客戶提供的 API。原本手動回歸測試耗時 40 分鐘，撰寫 Playwright 自動化腳本，耗時縮減至 5 分鐘。',
-        '參與客戶公司的新增功能開發(網路電話彈出視窗)，根據客戶需求和客戶公司提供的 Next.js + SIP.js 專案，製作流程圖和線框圖，再加入 Tailwind CSS + Headless UI + Web API (MediaStream, AudioContext) 實作畫面與功能。',
+        '參與客戶公司的專案開發（視訊會議網站），使用 BigBlueButton + React + styled-components 調整介面與功能, 使用 Transifex 串接多語系字串。於新增功能之前，整合客戶需求和自己公司同事研究後得知的技術可行性，製作流程圖和線框圖，再實作畫面與功能、串接客戶提供的 API。原本手動回歸測試耗時 40 分鐘，撰寫 Playwright 自動化腳本，耗時縮減至 5 分鐘。',
+        '參與客戶公司的新增功能開發（網路電話彈出視窗），根據客戶需求和客戶公司提供的 Next.js + SIP.js 專案，製作流程圖和線框圖，再加入 Tailwind CSS + Headless UI + Web API (MediaStream, AudioContext) 實作畫面與功能。',
         '參與一個客戶專案開發（建商房客資訊管理網站），兩個公司產品開發（商品試用網站、電商自選服務平台），使用 HTML + Tailwind CSS + JavaScript 切版、實作功能。'
       ]
     },
