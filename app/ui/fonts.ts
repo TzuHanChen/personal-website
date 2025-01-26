@@ -4,12 +4,14 @@ export const NotoSansTC = Noto_Sans_TC({
 	subsets: ['latin'],
 	weight: ['400', '700'],
 	display: 'swap',
+	fallback: ['sans-serif']
 });
 
 export const NotoSerifTC = Noto_Serif_TC({
 	subsets: ['latin'],
 	weight: ['400', '700'],
 	display: 'swap',
+	fallback: ['serif']
 });
 
 export const NotoColorEmoji = Noto_Color_Emoji({
@@ -22,4 +24,5 @@ export const FiraCode = Fira_Code({
 	subsets: ['latin'],
 	weight: ['400', '700'],
 	display: 'swap',
+	fallback: ['monospace']
 });

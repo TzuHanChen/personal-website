@@ -4,6 +4,11 @@ const data = [
     "name": "Teamie",
     "description": "Teamie 致⼒為學⽣及初⼊職場的新鮮人媒合專案夥伴，打造跨專業、跨地區的合作機會。",
     "skill": "Next.js, Tailwind CSS, TypeScript, clsx, Feather Icons, Headless UI, React Hook Form, Zeabur, Swagger, RESTful API",
+    "link": {
+      "title": "",
+      "subtitle": "",
+      "href": ""
+    },
     "keyVisual": "teamie.png",
     "members": [
       { name: "夥伴", role: "行政財務" },
@@ -24,6 +29,11 @@ const data = [
     "name": "Test",
     "description": "Test",
     "skill": "Next.js",
+    "link": {
+      "title": "",
+      "subtitle": "",
+      "href": ""
+    },
     "keyVisual": "test.png",
     "members": [
       { name: "我", role: "網站前端" },
