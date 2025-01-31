@@ -21,7 +21,8 @@ async function Content({ slug }: { slug: string }) {
       [&>h3]:md:text-xl [&>h3]:lg:my-8 [&>h3]:lg:text-2xl
       [&>p]:my-2 [&>p]:text-gray-600
       [&>ul]:pl-5 [&>ul>li]:list-disc [&>ul>li]:text-gray-600
-      [&>hr]:my-8 [&>hr]:mx-auto [&>hr]:border-gray-300 [&>hr]:w-1/3 [&>hr]:lg:my-16">
+      [&>hr]:my-8 [&>hr]:mx-auto [&>hr]:border-gray-300 [&>hr]:w-1/3 [&>hr]:lg:my-16
+      [&>p>img]:my-12 [&>p>img]:rounded-3xl">
       {markdown}
     </ReactMarkdown>
   )
