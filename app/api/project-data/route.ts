@@ -25,25 +25,27 @@ const data = [
     "outputs": ["uxr", "flow", "ui", "site"]
   },
   {
-    "slug": "test",
-    "name": "Test",
-    "description": "Test",
-    "skill": "Next.js",
+    "slug": "personal-website",
+    "name": "個人網站",
+    "description": "我為自己設計與開發的個人網站",
+    "skill": "Next.js, Tailwind CSS, TypeScript, clsx, Heroicons, RESTful API",
     "link": {
       "title": "",
-      "subtitle": "",
-      "href": ""
+      "subtitle": "GitHub repo 原始碼",
+      "href": "https://github.com/tzuhanchen/personal-website-new"
     },
-    "keyVisual": "test.png",
+    "keyVisual": "personal-website.png",
     "members": [
+      { name: "我", role: "使用者體驗" },
+      { name: "我", role: "介面設計" },
       { name: "我", role: "網站前端" },
     ],
     "timeline": {
-      "start": "2022/22",
+      "start": "2024/04",
       "period": "進行中",
       "end": "進行中"
     },
-    "outputs": ["site"]
+    "outputs": ["flow", "ui", "pro", "site"]
   }
 ];
 

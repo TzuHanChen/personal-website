@@ -5,7 +5,7 @@ import { Project } from "@/app/type";
  * 產出項目
  * @param data "uxr" | "flow" | "ui" | "pro" | "page" | "site"
  */
-function Item({ data }: { data: string }) {
+function Item({ data }: { data: Project["outputs"][any] }) {
   let icon = <></>
   let text = '';
   switch (data) {

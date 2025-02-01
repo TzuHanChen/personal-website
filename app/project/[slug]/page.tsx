@@ -4,6 +4,7 @@ import Timeline from "@/app/project/[slug]/timeline";
 import Outputs from "@/app/project/[slug]/output";
 import ReactMarkdown from 'react-markdown';
 import PageButton from "@/app/ui/page-button";
+import { Project } from "@/app/type";
 
 type Params = Promise<{ slug: string }>;
 
@@ -22,7 +23,7 @@ async function Content({ slug }: { slug: string }) {
       [&>p]:my-2 [&>p]:text-gray-600
       [&>ul]:pl-5 [&>ul>li]:list-disc [&>ul>li]:text-gray-600
       [&>hr]:my-8 [&>hr]:mx-auto [&>hr]:border-gray-300 [&>hr]:w-1/3 [&>hr]:lg:my-16
-      [&>p>img]:my-12 [&>p>img]:rounded-3xl">
+      [&>p>img]:my-12 [&>p>img]:mx-auto [&>p>img]:rounded-3xl">
       {markdown}
     </ReactMarkdown>
   )
@@ -49,7 +50,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
   const res = await fetch(
     process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-content' + `?slug=${slug}`
   );
-  const project = await res.json();
+  const project: Project = await res.json();
 
   return (
     <section className="py-24 px-6 flex flex-col gap-12 md:px-24 md:gap-16 lg:flex-1 lg:py-36 lg:px-12 lg:gap-24 xl:px-24">

@@ -7,5 +7,5 @@ export type Project = {
     keyVisual: string,
     members: { name: string, role: string }[],
     timeline: { start: string, period: string, end: string },
-    outputs: string[]
+    outputs: ["uxr" | "flow" | "ui" | "pro" | "page" | "site"]
 }

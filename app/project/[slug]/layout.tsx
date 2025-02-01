@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       title: `${project.name} | 陳子涵`,
       description: project.description,
       openGraph: {
-        images: process.env.NEXT_PUBLIC_FRONTEND_URL + '/' + project.keyVisual
+        images: process.env.NEXT_PUBLIC_FRONTEND_URL + '/image/' + project.keyVisual
       }
     }
   } else {
