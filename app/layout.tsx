@@ -1,5 +1,4 @@
-/* eslint-disable @next/next/no-page-custom-font */
-import { NotoSansTC, NotoSerifTC } from "@/app/ui/fonts";
+import { NotoSansTC } from "@/app/ui/fonts";
 import Header from "@/app/ui/header";
 import Footer from "@/app/ui/footer";
 import "./globals.css";

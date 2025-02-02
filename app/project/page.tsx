@@ -13,7 +13,7 @@ export default async function Projects() {
   const res = await fetch(
     process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-list'
   );
-  const projects = await res.json();
+  const projects: Project[] = await res.json();
 
   return (
     <main className="bg-gray-50 py-24 px-6 flex flex-col gap-16 md:ml-20 md:px-24 lg:py-36 lg:gap-24">

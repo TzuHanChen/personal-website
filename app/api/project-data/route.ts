@@ -4,6 +4,12 @@ const data = [
     "name": "Teamie",
     "description": "Teamie 致⼒為學⽣及初⼊職場的新鮮人媒合專案夥伴，打造跨專業、跨地區的合作機會。",
     "skill": "Next.js, Tailwind CSS, TypeScript, clsx, Feather Icons, Headless UI, React Hook Form, Zeabur, Swagger, RESTful API",
+    "link": {
+      "title": "",
+      "subtitle": "",
+      "href": "",
+      "outside": false
+    },
     "keyVisual": "teamie.png",
     "members": [
       { name: "夥伴", role: "行政財務" },
@@ -20,20 +26,28 @@ const data = [
     "outputs": ["uxr", "flow", "ui", "site"]
   },
   {
-    "slug": "test",
-    "name": "Test",
-    "description": "Test",
-    "skill": "Next.js",
-    "keyVisual": "test.png",
+    "slug": "personal-website",
+    "name": "個人網站",
+    "description": "我為自己設計與開發的個人網站",
+    "skill": "Next.js, Tailwind CSS, TypeScript, clsx, Heroicons, RESTful API",
+    "link": {
+      "title": "GitHub repo",
+      "subtitle": "原始碼",
+      "href": "https://github.com/tzuhanchen/personal-website",
+      "outside": true
+    },
+    "keyVisual": "personal-website.png",
     "members": [
+      { name: "我", role: "使用者體驗" },
+      { name: "我", role: "介面設計" },
       { name: "我", role: "網站前端" },
     ],
     "timeline": {
-      "start": "2022/22",
+      "start": "2024/04",
       "period": "進行中",
       "end": "進行中"
     },
-    "outputs": ["site"]
+    "outputs": ["flow", "ui", "pro", "site"]
   }
 ];
 

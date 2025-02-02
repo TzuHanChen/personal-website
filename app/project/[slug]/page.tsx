@@ -4,22 +4,28 @@ import Timeline from "@/app/project/[slug]/timeline";
 import Outputs from "@/app/project/[slug]/output";
 import ReactMarkdown from 'react-markdown';
 import PageButton from "@/app/ui/page-button";
+import { Project } from "@/app/type";
 
 type Params = Promise<{ slug: string }>;
 
 async function Content({ slug }: { slug: string }) {
   const markdown = await fetch(
-    process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-markdown' + `?slug=${slug}`
+    // process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-markdown' + `?slug=${slug}`
+    process.env.NEXT_PUBLIC_FRONTEND_URL + '/markdown/' + slug + '.md'
   ).then(res => res.text());
 
   return (
-    <div className="mx-auto w-full max-w-192
-      [&>h2]:my-6 [&>h2]:text-gray-900 [&>h2]:text-2xl [&>h2]:md:text-3xl [&>h2]:lg:text-4xl
-      [&>h3]:my-4 [&>h3]:text-gray-900 [&>h3]:text-lg [&>h3]:md:text-xl [&>h3]:lg:text-2xl
+    <ReactMarkdown className="mx-auto mb-12 lg:mb-24 w-full max-w-192
+      [&>h2]:my-6 [&>h2]:text-gray-900 [&>h2]:text-2xl
+      [&>h2]:md:text-3xl [&>h2]:lg:my-12 [&>h2]:lg:text-4xl
+      [&>h3]:my-4 [&>h3]:text-gray-900 [&>h3]:text-lg
+      [&>h3]:md:text-xl [&>h3]:lg:my-8 [&>h3]:lg:text-2xl
       [&>p]:my-2 [&>p]:text-gray-600
-      [&>hr]:my-24 [&>hr]:border-gray-300">
-      <ReactMarkdown>{markdown}</ReactMarkdown>
-    </div>
+      [&>ul]:pl-5 [&>ul>li]:list-disc [&>ul>li]:text-gray-600
+      [&>hr]:my-8 [&>hr]:mx-auto [&>hr]:border-gray-300 [&>hr]:w-1/3 [&>hr]:lg:my-16
+      [&>p>img]:my-12 [&>p>img]:mx-auto [&>p>img]:rounded-3xl">
+      {markdown}
+    </ReactMarkdown>
   )
 }
 
@@ -44,7 +50,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
   const res = await fetch(
     process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-content' + `?slug=${slug}`
   );
-  const project = await res.json();
+  const project: Project = await res.json();
 
   return (
     <section className="py-24 px-6 flex flex-col gap-12 md:px-24 md:gap-16 lg:flex-1 lg:py-36 lg:px-12 lg:gap-24 xl:px-24">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Project } from "@/app/type";
 import NotFound from "@/app/not-found";
+import PageButton from "@/app/ui/page-button";
 
 type Params = Promise<{ slug: string }>;
 
@@ -10,14 +11,14 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const res = await fetch(
     process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-content' + `?slug=${slug}`
   );
-  const project = await res.json();
+  const project: Project = await res.json();
 
   if (res.ok) {
     return {
       title: `${project.name} | 陳子涵`,
       description: project.description,
       openGraph: {
-        images: process.env.NEXT_PUBLIC_FRONTEND_URL + '/' + project.keyVisual
+        images: process.env.NEXT_PUBLIC_FRONTEND_URL + '/image/' + project.keyVisual
       }
     }
   } else {
@@ -28,13 +29,15 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   }
 }
 
-function ProjectSideBar({ name, description, skill }: Project) {
+function ProjectSideBar({ name, description, skill, link }: Project) {
   return (
     <div className="py-24 px-6 flex flex-col gap-6 md:px-24 lg:sticky lg:top-0 lg:w-96 lg:h-screen lg:py-36 lg:px-12">
       <h1 className="text-3xl text-gray-900 md:text-4xl lg:text-5xl">{name}</h1>
       <p className="text-gray-700">{description}</p>
-      <p>{skill}</p>
-      <button className="w-max self-end">DEMO</button>
+      <p className="mb-6">{skill}</p>
+      {link.title != "" &&
+        <PageButton title={link.title} subtitle={link.subtitle}
+          href={link.href} outside={link.outside} />}
     </div>
   )
 }
@@ -46,7 +49,7 @@ export default async function ProjectLayout({ children, params }:
   const res = await fetch(
     process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-content' + `?slug=${slug}`
   );
-  const project = await res.json();
+  const project: Project = await res.json();
 
   if (res.ok) {
     return (
