@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const res = await fetch(
     process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-content' + `?slug=${slug}`
   );
-  const project = await res.json();
+  const project: Project = await res.json();
 
   if (res.ok) {
     return {
@@ -36,7 +36,8 @@ function ProjectSideBar({ name, description, skill, link }: Project) {
       <p className="text-gray-700">{description}</p>
       <p className="mb-6">{skill}</p>
       {link.title != "" &&
-        <PageButton title={link.title} subtitle={link.subtitle} href={link.href} />}
+        <PageButton title={link.title} subtitle={link.subtitle}
+          href={link.href} outside={link.outside} />}
     </div>
   )
 }
@@ -48,7 +49,7 @@ export default async function ProjectLayout({ children, params }:
   const res = await fetch(
     process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-content' + `?slug=${slug}`
   );
-  const project = await res.json();
+  const project: Project = await res.json();
 
   if (res.ok) {
     return (

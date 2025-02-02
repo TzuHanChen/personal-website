@@ -3,11 +3,12 @@ import clsx from "clsx";
 import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 export default function PageButton(
-  { title, subtitle = "", href, align = "right" }:
-    { title: string, subtitle?: string, href: string, align?: "right" | "left" }
+  { title, subtitle = "", href, align = "right", outside }:
+    { title: string, subtitle?: string, href: string, outside?: boolean,
+      align?: "right" | "left" }
 ) {
   return (
-    <Link href={href}
+    <Link href={href} target={outside ? "_blank" : "_self"}
       className={clsx("rounded-3xl bg-white p-6 flex",
         align == "right" ? "flex-row" : "flex-row-reverse", "justify-end items-center gap-3 group")}>
       <div className={clsx("text-gray-900", align == "right" ? "text-right" : "text-left")}>

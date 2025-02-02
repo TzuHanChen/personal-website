@@ -7,7 +7,8 @@ const data = [
     "link": {
       "title": "",
       "subtitle": "",
-      "href": ""
+      "href": "",
+      "outside": false
     },
     "keyVisual": "teamie.png",
     "members": [
@@ -30,9 +31,10 @@ const data = [
     "description": "我為自己設計與開發的個人網站",
     "skill": "Next.js, Tailwind CSS, TypeScript, clsx, Heroicons, RESTful API",
     "link": {
-      "title": "",
-      "subtitle": "GitHub repo 原始碼",
-      "href": "https://github.com/tzuhanchen/personal-website-new"
+      "title": "GitHub repo",
+      "subtitle": "原始碼",
+      "href": "https://github.com/tzuhanchen/personal-website",
+      "outside": true
     },
     "keyVisual": "personal-website.png",
     "members": [

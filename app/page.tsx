@@ -6,6 +6,9 @@ import { Project } from "@/app/type";
 export const metadata: Metadata = {
   title: "陳子涵",
   description: "陳子涵的個人網站",
+  openGraph: {
+    images: process.env.NEXT_PUBLIC_FRONTEND_URL + '/image/personal-website.png'
+  }
 };
 
 export const dynamic = 'force-dynamic';
@@ -23,7 +26,7 @@ async function Projects() {
   const res = await fetch(
     process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-list' + '?count=5'
   );
-  const projects = await res.json();
+  const projects: Project[] = await res.json();
 
   return (
     <section className="mx-auto w-full max-w-270 flex flex-col gap-6 lg:gap-9">
