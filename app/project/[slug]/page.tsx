@@ -17,14 +17,14 @@ async function Content({ slug }: { slug: string }) {
   return (
     <ReactMarkdown className="mx-auto mb-12 lg:mb-24 w-full max-w-192
       [&>h2]:my-6 [&>h2]:text-gray-900 [&>h2]:text-2xl
-      [&>h2]:md:text-3xl [&>h2]:lg:my-12 [&>h2]:lg:text-4xl
+      md:[&>h2]:text-3xl lg:[&>h2]:my-12 lg:[&>h2]:text-4xl
       [&>h3]:my-4 [&>h3]:text-gray-900 [&>h3]:text-lg
-      [&>h3]:md:text-xl [&>h3]:lg:my-8 [&>h3]:lg:text-2xl
+      md:[&>h3]:text-xl lg:[&>h3]:my-8 lg:[&>h3]:text-2xl
       [&>p]:my-2 [&>p]:text-gray-600
       [&>ul]:pl-5 [&>ul>li]:list-disc [&>ul>li]:text-gray-600
-      [&>hr]:my-8 [&>hr]:mx-auto [&>hr]:border-gray-300 [&>hr]:w-1/3 [&>hr]:lg:my-16
+      [&>hr]:my-8 [&>hr]:mx-auto [&>hr]:border-gray-300 [&>hr]:w-1/3 lg:[&>hr]:my-16
       [&>p>img]:my-12 [&>p>img]:mx-auto [&>p>img]:rounded-3xl
-      [&>p>a]:underline [&>p>a]:active:text-teal-600 [&>p>a]:transition-colors [&>p>a]:duration-300">
+      [&>p>a]:underline active:[&>p>a]:text-teal-600 [&>p>a]:transition-colors [&>p>a]:duration-300">
       {markdown}
     </ReactMarkdown>
   )
