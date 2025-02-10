@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Card from "@/app/ui/card";
 import { Project } from "@/app/type";
+import Link from "next/link";
+import PageButton from "@/app/ui/page-button";
 
 export const metadata: Metadata = {
   title: "專案 | 陳子涵",
@@ -32,6 +34,20 @@ export default async function Projects() {
                 title={project.name} description={project.description} />
             )
           })}
+
+          <div className="rounded-3xl min-h-80 bg-white p-6 flex flex-col justify-center gap-3">
+            <p className="mb-3 text-2xl">持續更新中 ...</p>
+            <p className="text-gray-700">這裡是新版的個人網站，未來預計更新</p>
+            <ol className="pl-5 list-decimal text-gray-700">
+              <li>加入舊版網站沒有的新專案</li>
+              <li>加入舊版網站的舊專案</li>
+              <li>加入舊版網站的文章</li>
+              <li>新增各種功能（專案的篩選排序搜尋、深色模式 ...）</li>
+              <li>製作全新的小作品或專案</li>
+            </ol>
+          </div>
+          
+          <PageButton title="前往舊版網站" outside href="https://tzuhanchen.vercel.app/" />
         </div>
       </section>
     </main>

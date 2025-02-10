@@ -32,7 +32,7 @@ function Time({ stage, text }: { stage: string, text: string }) {
 }
 
 function Line() {
-  return <div className='hidden min-w-6 w-12 h-1 rounded-sm bg-gray-200 sm:block'></div>
+  return <div className='hidden min-w-6 w-12 h-1 rounded-xs bg-gray-200 sm:block'></div>
 }
 
 export default function Timeline({ timeline }: { timeline: Project["timeline"] }) {

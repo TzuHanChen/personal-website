@@ -31,8 +31,8 @@ const data = [
     "description": "我為自己設計與開發的個人網站",
     "skill": "Next.js, Tailwind CSS, TypeScript, clsx, Heroicons, RESTful API",
     "link": {
-      "title": "GitHub repo",
-      "subtitle": "原始碼",
+      "title": "原始碼",
+      "subtitle": "GitHub repo",
       "href": "https://github.com/tzuhanchen/personal-website",
       "outside": true
     },
@@ -48,6 +48,28 @@ const data = [
       "end": "進行中"
     },
     "outputs": ["flow", "ui", "pro", "site"]
+  },
+  {
+    "slug": "dashboard",
+    "name": "儀表板",
+    "description": "依照 Next.js 官方教學課程實作的網站",
+    "skill": "Next.js, Tailwind CSS, clsx, TypeScript, Zod, Auth.js",
+    "link": {
+      "title": "瀏覽網站",
+      "subtitle": "DEMO",
+      "href": "https://nextjs-dashboard-tzuhanchen.vercel.app/",
+      "outside": true
+    },
+    "keyVisual": "dashboard.png",
+    "members": [
+      { name: "我", role: "網站前端" },
+    ],
+    "timeline": {
+      "start": "2023/12",
+      "period": "兩個月",
+      "end": "2024/02"
+    },
+    "outputs": ["site"]
   }
 ];
 
