@@ -70,6 +70,28 @@ const data = [
       "end": "2024/02"
     },
     "outputs": ["site"]
+  },
+  {
+    "slug": "sticker-smash",
+    "name": "照片裝飾",
+    "description": "選擇照片、新增貼紙、拖曳與縮放貼紙、保存整個畫面到裝置中",
+    "skill": "Expo, React Native",
+    "link": {
+      "title": "瀏覽網站",
+      "subtitle": "DEMO",
+      "href": "https://sticker-smash-tzuhanchen.vercel.app/",
+      "outside": true
+    },
+    "keyVisual": "sticker-smash.png",
+    "members": [
+      { name: "我", role: "網站前端" },
+    ],
+    "timeline": {
+      "start": "2023/10",
+      "period": "五個月",
+      "end": "2024/03"
+    },
+    "outputs": ["site"]
   }
 ];
 
