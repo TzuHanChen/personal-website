@@ -62,4 +62,9 @@
 
 利用 route handler 實作 API，在網頁中呼叫 API、取得專案的資料、產生畫面。
 
+* /api/project-data 所有專案的資料
+* /api/get-project-list 取得所有專案的清單
+* /api/get-project-content 取得一個專案的內容
+* /api/get-project-prevnext 取得前一個專案和下一個專案
+
 使用 Vercel 部署網站，同一個 GitHub repository 的兩個分支會分別產生測試網站和正式網站。

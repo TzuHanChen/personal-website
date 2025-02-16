@@ -29,7 +29,7 @@ const data = [
     "slug": "personal-website",
     "name": "個人網站",
     "description": "我為自己設計與開發的個人網站",
-    "skill": "Next.js, Tailwind CSS, TypeScript, clsx, Heroicons, RESTful API",
+    "skill": "Next.js, Tailwind CSS, TypeScript, clsx, Heroicons, RESTful API, Figma, FigJam",
     "link": {
       "title": "原始碼",
       "subtitle": "GitHub repo",
