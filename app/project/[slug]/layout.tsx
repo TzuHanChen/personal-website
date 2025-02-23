@@ -34,7 +34,7 @@ function ProjectSideBar({ name, description, skill, link }: Project) {
     <div className="py-24 px-6 flex flex-col gap-6 md:px-24 lg:sticky lg:top-0 lg:w-96 lg:h-screen lg:py-36 lg:px-12">
       <h1 className="text-3xl text-gray-900 md:text-4xl lg:text-5xl">{name}</h1>
       <p className="text-gray-700">{description}</p>
-      <p className="mb-6">{skill}</p>
+      <p className="mb-6 text-gray-900">{skill.join(' + ')}</p>
       {link.title != "" &&
         <PageButton title={link.title} subtitle={link.subtitle}
           href={link.href} outside={link.outside} />}

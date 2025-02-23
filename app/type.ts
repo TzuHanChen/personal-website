@@ -2,7 +2,7 @@ export type Project = {
     slug: string,
     name: string,
     description: string,
-    skill: string,
+    skill: string[],
     link: { title: string, subtitle: string, href: string, outside: boolean },
     keyVisual: string,
     members: { name: string, role: string }[],

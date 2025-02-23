@@ -3,7 +3,7 @@ const data = [
     "slug": "teamie",
     "name": "Teamie",
     "description": "Teamie 致⼒為學⽣及初⼊職場的新鮮人媒合專案夥伴，打造跨專業、跨地區的合作機會。",
-    "skill": "Next.js, Tailwind CSS, TypeScript, clsx, Feather Icons, Headless UI, React Hook Form, Zeabur, Swagger, RESTful API",
+    "skill": ["Next.js", "React", "Tailwind CSS", "TypeScript", "Headless UI", "React Hook Form"],
     "link": {
       "title": "",
       "subtitle": "",
@@ -29,7 +29,7 @@ const data = [
     "slug": "personal-website",
     "name": "個人網站",
     "description": "我為自己設計與開發的個人網站",
-    "skill": "Next.js, Tailwind CSS, TypeScript, clsx, Heroicons, RESTful API, Figma, FigJam",
+    "skill": ["Next.js", "React", "Tailwind CSS", "TypeScript"],
     "link": {
       "title": "原始碼",
       "subtitle": "GitHub repo",
@@ -53,7 +53,7 @@ const data = [
     "slug": "dashboard",
     "name": "儀表板",
     "description": "依照 Next.js 官方教學課程實作的網站",
-    "skill": "Next.js, Tailwind CSS, clsx, TypeScript, Zod, Auth.js",
+    "skill": ["Next.js", "React", "Tailwind CSS", "TypeScript"],
     "link": {
       "title": "瀏覽網站",
       "subtitle": "DEMO",
@@ -75,7 +75,7 @@ const data = [
     "slug": "sticker-smash",
     "name": "照片裝飾",
     "description": "選擇照片、新增貼紙、拖曳與縮放貼紙、保存整個畫面到裝置中",
-    "skill": "Expo, React Native",
+    "skill": ["Expo", "React Native"],
     "link": {
       "title": "瀏覽網站",
       "subtitle": "DEMO",

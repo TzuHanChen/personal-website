@@ -4,8 +4,10 @@ import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 export default function PageButton(
   { title, subtitle = "", href, align = "right", outside }:
-    { title: string, subtitle?: string, href: string, outside?: boolean,
-      align?: "right" | "left" }
+    {
+      title: string, subtitle?: string, href: string, outside?: boolean,
+      align?: "right" | "left"
+    }
 ) {
   return (
     <Link href={href} target={outside ? "_blank" : "_self"}
@@ -16,10 +18,10 @@ export default function PageButton(
         <p className="text-2xl group-active:text-teal-700 transition-colors duration-300">
           {title}</p>
       </div>
-      <div className="bg-transparent p-2 rounded-full group-active:bg-teal-700 transition-colors duration-300">
+      <div className="bg-gray-100 p-2 rounded-full group-active:bg-teal-700 transition-colors duration-300">
         {align == "right"
-          ? <ArrowRightIcon className="size-6 stroke-gray-900 group-active:stroke-white transition-colors duration-300" />
-          : <ArrowLeftIcon className="size-6 stroke-gray-900 group-active:stroke-white transition-colors duration-300" />}
+          ? <ArrowRightIcon className="size-6 stroke-gray-900 group-active:stroke-teal-100 transition-colors duration-300" />
+          : <ArrowLeftIcon className="size-6 stroke-gray-900 group-active:stroke-teal-100 transition-colors duration-300" />}
       </div>
     </Link>
   )

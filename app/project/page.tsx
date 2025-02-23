@@ -27,11 +27,11 @@ export default async function Projects() {
         </div>
 
         <div className="flex justify-center gap-6 flex-wrap *:w-full *:max-w-96 sm:grid sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project: Project) => {
+          {projects.map((project: Project, index) => {
             return (
               <Card key={project.slug} href={`/project/${project.slug}`}
-                imageUrl={`/image/${project.keyVisual}`}
-                title={project.name} description={project.description} />
+                imageUrl={`/image/${project.keyVisual}`} first={index === 0}
+                title={project.name} description={project.description} tags={project.skill} />
             )
           })}
 
