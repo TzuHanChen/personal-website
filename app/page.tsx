@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PageButton from "@/app/ui/page-button"
 import Card from "@/app/ui/card";
 import { Project } from "@/app/type";
@@ -15,9 +16,20 @@ export const dynamic = 'force-dynamic';
 
 function Hero() {
   return (
-    <section className="mx-auto w-full max-w-270 rounded-3xl bg-white py-12 px-6 text-gray-900">
-      <h1 className="mb-2 text-2xl text-center md:mb-4 md:text-3xl">你好，我是陳子涵</h1>
-      <p className="text-2xl text-center md:text-3xl">現在是前端工程師</p>
+    <section className="rounded-4xl bg-white py-12 px-6 flex flex-col gap-6">
+      <div className="flex flex-col justify-center items-center gap-6 md:flex-row">
+        <Image src="/image/icon.svg" alt="陳子涵的圖示" title="陳子涵的圖示"
+          width={96} height={96} className="size-24 rounded-full" />
+        <div>
+          <h1 className="mb-1 text-2xl text-center text-gray-900 md:text-3xl">
+            你好，我是陳子涵</h1>
+          <p className="text-2xl text-center text-gray-900 md:text-3xl">
+            現在是前端工程師</p>
+        </div>
+      </div>
+      <p className="mx-auto w-full max-w-144 text-gray-600">
+        {"　　"}我目前使用 Next.js, React, Tailwind CSS, React Hook Form 等工具，完成公司任務與業餘專案的各項畫面與功能。之前有接觸過介面設計、使用者體驗、後端開發，現在仍有持續利用過往經歷，與負責這些職位的夥伴討論、溝通與合作。如果你想找我聊聊新的合作機會，請聯繫我！
+      </p>
     </section>
   )
 }

@@ -70,7 +70,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-[calc(100%-80px)] inset-x-0 h-20 bg-teal-50 flex justify-center gap-2 md:inset-y-0 md:left-0 md:w-20 md:h-screen md:flex-col">
+    <header className="fixed top-[calc(100%-80px)] inset-x-0 shadow-sm h-20 bg-teal-50 flex justify-center gap-2 md:inset-y-0 md:left-0 md:w-20 md:h-screen md:flex-col">
       {list.map((item) => <Button key={item.href} item={item} pathname={pathname} />)}
     </header>
   )
