@@ -11,8 +11,9 @@ export default function PageButton(
 ) {
   return (
     <Link href={href} target={outside ? "_blank" : "_self"}
-      className={clsx("rounded-3xl bg-white p-6 flex",
-        align == "right" ? "flex-row" : "flex-row-reverse", "justify-end items-center gap-3 group")}>
+      className={clsx("shadow-sm rounded-3xl bg-white p-6 flex",
+        align == "right" ? "flex-row" : "flex-row-reverse", 
+        "justify-end items-center gap-3 group hover:shadow-xl transition-shadow duration-500")}>
       <div className={clsx("text-gray-900", align == "right" ? "text-right" : "text-left")}>
         {subtitle && <p className="text-gray-600">{subtitle}</p>}
         <p className="text-2xl group-active:text-teal-700 transition-colors duration-300">
