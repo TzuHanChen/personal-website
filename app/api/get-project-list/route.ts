@@ -19,6 +19,7 @@ export async function GET(request: NextRequest) {
       keyVisual: project.keyVisual,
       name: project.name,
       description: project.description,
+      skill: project.skill
     });
   }
 
