@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { projectData } from "@/app/api/project-data/route";
+import { projectData } from "@/app/api/project-data/project-data";
 import { Project } from "@/app/type";
 import NotFound from "@/app/not-found";
 import PageButton from "@/app/ui/page-button";
