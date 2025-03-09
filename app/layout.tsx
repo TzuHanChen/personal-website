@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { NotoSansTC } from "@/app/ui/fonts";
 import Header from "@/app/ui/header";
 import Footer from "@/app/ui/footer";
@@ -12,6 +13,7 @@ export default function RootLayout({ children }:
         <Header />
         {children}
         <Footer />
+        <GoogleAnalytics gaId="G-L1VLJWN6YZ" />
       </body>
     </html>
   );
