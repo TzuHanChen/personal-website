@@ -1,4 +1,5 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { Analytics } from "@vercel/analytics/react";
 import { NotoSansTC } from "@/app/ui/fonts";
 import Header from "@/app/ui/header";
 import Footer from "@/app/ui/footer";
@@ -14,6 +15,7 @@ export default function RootLayout({ children }:
         {children}
         <Footer />
         <GoogleAnalytics gaId="G-L1VLJWN6YZ" />
+        <Analytics />
       </body>
     </html>
   );
