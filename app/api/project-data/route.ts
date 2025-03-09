@@ -1,4 +1,4 @@
-const data = [
+export const projectData = [
   {
     "slug": "teamie",
     "name": "Teamie",
@@ -96,5 +96,5 @@ const data = [
 ];
 
 export async function GET(request: Request) {
-  return Response.json(data);
+  return Response.json(projectData);
 }

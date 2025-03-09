@@ -4,9 +4,15 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "關於我 | 陳子涵",
   description: "陳子涵的自我介紹",
+  openGraph: {
+    type: "website",
+    url: process.env.NEXT_PUBLIC_FRONTEND_URL + '/about',
+    title: "關於我 | 陳子涵",
+    description: "陳子涵的自我介紹",
+    siteName: "陳子涵",
+    images: process.env.NEXT_PUBLIC_FRONTEND_URL + '/image/personal-website.png'
+  }
 };
-
-// 我想要把首頁主視覺區塊複製貼上到關於我頁面，但是要調整＂我目前使用...＂的文案，你能協助我擴充文案內容嗎？
 
 function Intro() {
   return (

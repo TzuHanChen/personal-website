@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: "陳子涵的個人網站",
   openGraph: {
     type: "website",
-    url: "https://personal-website-tzuhanchen.vercel.app",
+    url: process.env.NEXT_PUBLIC_FRONTEND_URL,
     title: "陳子涵",
     description: "陳子涵的個人網站",
     siteName: "陳子涵",
@@ -38,14 +38,14 @@ function Hero() {
         我目前使用 Next.js, React, Tailwind CSS, TypeScript 等工具，完成公司任務與業餘專案的各項畫面與功能。之前有接觸過介面設計、使用者體驗、後端開發，現在仍有持續利用過往經歷，與負責這些職位的夥伴討論、溝通與合作。如果你想找我聊聊新的合作機會，請聯繫我！
       </p>
       <div className="mx-auto w-full max-w-144 flex justify-center gap-6 flex-wrap lg:justify-start">
-        <Link href="/project" className="rounded-full bg-gray-800 py-3 px-6 flex gap-1.5 text-white active:bg-teal-700 transition-colors duration-300">
-          <FolderIcon className="size-6" />
-          <span>瀏覽我的專案</span>
+        <Link href="/project" className="rounded-full bg-gray-800 py-3 px-6 flex items-center gap-1.5 hover:bg-teal-700 active:bg-teal-700 transition-colors duration-300 group">
+          <FolderIcon className="size-6 stroke-white group-hover:stroke-teal-100 group-active:stroke-teal-100 transition-colors duration-300" />
+          <span className="text-white group-hover:text-teal-100 group-active:text-teal-100 transition-colors duration-300">瀏覽我的專案</span>
         </Link>
-        <Link href="/TzuHanChen_Resume_20250308.pdf" target="_blank" className="rounded-full border border-gray-700 py-3 px-6 flex gap-1.5 active:bg-gray-100 transition-colors duration-300">
+        <a href="/TzuHanChen_Resume_20250308.pdf" target="_blank" className="rounded-full border border-gray-700 py-3 px-6 flex items-center gap-1.5 hover:bg-gray-100 active:bg-gray-100 transition-colors duration-300 group">
           <ArrowDownTrayIcon className="size-6" />
           <span>下載我的履歷</span>
-        </Link>
+        </a>
       </div>
     </section>
   )
