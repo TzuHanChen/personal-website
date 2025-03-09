@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { projectData } from "@/app/api/project-data/project-data";
 import { Project } from "@/app/type";
 import NotFound from "@/app/not-found";
 import PageButton from "@/app/ui/page-button";
@@ -8,16 +9,18 @@ type Params = Promise<{ slug: string }>;
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const slug = (await params).slug;
 
-  const res = await fetch(
-    process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-content' + `?slug=${slug}`
-  );
-  const project: Project = await res.json();
+  const project = projectData.find(project => project.slug === slug);
 
-  if (res.ok) {
+  if (project) {
     return {
       title: `${project.name} | 陳子涵`,
       description: project.description,
       openGraph: {
+        type: "website",
+        url: process.env.NEXT_PUBLIC_FRONTEND_URL + '/project/' + slug,
+        title: `${project.name} | 陳子涵`,
+        description: project.description,
+        siteName: "陳子涵",
         images: process.env.NEXT_PUBLIC_FRONTEND_URL + '/image/' + project.keyVisual
       }
     }

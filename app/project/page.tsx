@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
 import Card from "@/app/ui/card";
 import { Project } from "@/app/type";
-import Link from "next/link";
 import PageButton from "@/app/ui/page-button";
 
 export const metadata: Metadata = {
   title: "專案 | 陳子涵",
   description: "陳子涵的專案",
+  openGraph: {
+    type: "website",
+    url: process.env.NEXT_PUBLIC_FRONTEND_URL + '/project',
+    title: "專案 | 陳子涵",
+    description: "陳子涵的專案",
+    siteName: "陳子涵",
+    images: process.env.NEXT_PUBLIC_FRONTEND_URL + '/image/personal-website.png'
+  }
 };
 
 export const dynamic = 'force-dynamic';
