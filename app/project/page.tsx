@@ -55,7 +55,7 @@ export default async function Projects() {
             </ol>
           </div>
           
-          <PageButton title="前往舊版網站" outside href="https://tzuhanchen.vercel.app/" />
+          <PageButton title="前往舊版網站" outside href="https://tzuhanchen-archive.vercel.app/" />
         </div>
       </section>
     </main>
