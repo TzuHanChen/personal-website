@@ -22,13 +22,13 @@ export default function Footer() {
           <p>
             <EnvelopeIcon className="size-6 stroke-gray-700" />
             <Link href='mailto:hahachentzuhan@gmail.com'
-              className="underline active:text-teal-600 transition-colors duration-300">
+              className="underline hover:text-teal-600 active:text-teal-600 transition-colors duration-300">
               hahachentzuhan@gmail.com</Link>
           </p>
           <p>
             <CodeBracketIcon className="size-6 stroke-gray-700" />
             <Link href='https://github.com/TzuHanChen' target="_blank"
-              className="underline active:text-teal-600 transition-colors duration-300">
+              className="underline hover:text-teal-600 active:text-teal-600 transition-colors duration-300">
               GitHub</Link>
           </p>
         </div>

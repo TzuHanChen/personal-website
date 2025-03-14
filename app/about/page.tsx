@@ -27,9 +27,15 @@ function Intro() {
             現在是前端工程師</p>
         </div>
       </div>
-      <p className="mx-auto w-full max-w-144 text-gray-600 leading-relaxed">
-        我目前使用 Next.js, React, Tailwind CSS, TypeScript 等工具，完成公司任務與業餘專案的各項畫面與功能。之前有接觸過介面設計、使用者體驗、後端開發，現在仍有持續利用過往經歷，與負責這些職位的夥伴討論、溝通與合作。如果你想找我聊聊新的合作機會，請聯繫我！
-      </p>
+      <div className="mx-auto w-full max-w-144 text-gray-600 leading-relaxed">
+        <p>我目前使用 Next.js, React, Tailwind CSS, TypeScript 等工具，完成公司任務與業餘專案的網頁切板與功能實作。在學期間有接觸過介面設計、使用者體驗、後端開發，現在仍有持續利用過往經歷，與負責這些職位的夥伴討論、溝通與合作。如果你想找我聊聊新的合作機會，請聯繫我！</p>
+        <br />
+        <p>在網站開發過程中，我致力於遵循響應式網頁設計和無障礙網頁設計的原則，確保各種裝置和瀏覽器的使用者都能順利瀏覽和操作網站。我了解搜尋引擎優化（SEO）的重要性，能夠根據行銷需求設定和測試必要的元標籤，讓網站在社群媒體貼文或搜尋結果中呈現完整、清晰的資訊。同時，我持續監測效能指標數據並優化程式碼，提升網站載入速度和使用體驗的流暢度。針對這些領域，我使用 Lighthouse、PageSpeed Insights、metatags.io、Vercel Speed Insights 和 Vercel Toolbar 等工具進行測試、分析和優化。</p>
+        <br />
+        <p>在網站部署上線、對外公開之後，為了觀察網站訪客的來源、每個網頁的熱門程度，我有使用 Google Analytics 和 Vercel Web Analytics 進行流量追蹤和使用者行為分析，同時利用 Google Search Console 監測搜尋曝光、排名與點閱率。我有使用 React Hook Form 建立表單的經驗，能夠實作基本的格式驗證、錯誤處理和提交表單流程。另外，我曾經使用 Playwright 撰寫簡單的自動化端對端測試腳本，確保核心功能正常運作。</p>
+        <br />
+        <p>我相信良好的溝通與團隊合作是成功專案的關鍵。在職場中我經常與專案經理、產品經理、設計師和後端工程師協作，共同解決問題並達成客戶或公司的目標。我能夠理解不同角色的需求和挑戰，並提供適當的技術建議和解決方案。在業餘時間，我從自身技術棧出發，追蹤新的前端技術和工具，同時接觸設計、後端、專案、產品、行銷等各方面的知識，持續提升自己的專業能力。</p>
+      </div>
     </section>
   )
 }
@@ -96,7 +102,7 @@ function Career() {
                 <span className="text-gray-900">{item.company}</span>
               </h3>
               <p className="text-gray-600">{item.timeline}</p>
-              <ul className="list-disc pl-5 text-gray-600">
+              <ul className="list-disc pl-5 text-gray-600 leading-relaxed *:my-1.5">
                 {item.description.map((subitem, i) => {
                   return <li key={i}>{subitem}</li>
                 })}
@@ -122,7 +128,7 @@ function Skill() {
     },
     {
       skill: '部署',
-      tool: 'Zeabur, Vercel'
+      tool: 'Vercel, Zeabur'
     },
     {
       skill: '使用者體驗、介面設計',
@@ -209,7 +215,7 @@ function Education() {
 
 export default function About() {
   return (
-    <main className="bg-gray-50 py-24 px-6 flex flex-col gap-16 md:ml-20 md:px-24 lg:py-36 lg:gap-24">
+    <main className="bg-gray-50 py-24 px-6 flex flex-col gap-16 md:ml-20 md:px-24 lg:gap-24">
       <Intro />
       <Career />
       <Skill />

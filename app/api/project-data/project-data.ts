@@ -28,7 +28,7 @@ export const projectData = [
   {
     "slug": "personal-website",
     "name": "個人網站",
-    "description": "我為自己設計與開發的個人網站",
+    "description": "我為自己設計與開發的個人網站，在此展示我的專案、經歷與技能",
     "skill": ["Next.js", "React", "Tailwind CSS", "TypeScript"],
     "link": {
       "title": "原始碼",
