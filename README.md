@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img src="https://github.com/TzuHanChen/personal-website/raw/main/app/icon.svg" alt="圖示" style="border-radius: 48px ; width: 96px" />
+</p>
 
-## Getting Started
+<h1 align="center">個人網站</h1>
 
-First, run the development server:
+<p align="center">我為自己設計與開發的個人網站，在此展示我的專案、經歷與技能</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![截圖](/public/image/personal-website.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 開發工具
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Next.js + Tailwind CSS + TypeScript + Heroicons
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 相關連結
 
-## Learn More
+[上線網站 DEMO](https://tzuhanchen.vercel.app)：使用 Vercel 取得 GitHub repo 的提交紀錄、自動部署
 
-To learn more about Next.js, take a look at the following resources:
+[Figma 設計稿](https://www.figma.com/design/PxzP3aRo72mYSQQhZ89X8H/%E5%80%8B%E4%BA%BA%E7%B6%B2%E7%AB%99_%E4%BB%8B%E9%9D%A2%E8%A8%AD%E8%A8%88?node-id=1763-507&t=cLUYro6LVJxTKlHE-1)：內容包括 SEO 預覽圖、網站圖示、線框圖、元件
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[Meta Tags](https://metatags.io/?url=https%3A%2F%2Ftzuhanchen.vercel.app)：可測試各項 SEO 資訊
