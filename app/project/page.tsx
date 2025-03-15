@@ -49,12 +49,11 @@ export default async function Projects() {
               <li>加入舊版網站沒有的新專案</li>
               <li>加入舊版網站的舊專案</li>
               <li>加入舊版網站的文章</li>
-              {/* <li>使用各種分析工具（Google Analytics, Google Search Console, PageSpeed Insights...）</li> */}
               <li>新增各種功能（專案的篩選排序搜尋、深色模式 ...）</li>
               <li>製作全新的小作品或專案</li>
             </ol>
           </div>
-          
+
           <PageButton title="前往舊版網站" outside href="https://tzuhanchen-archive.vercel.app/" />
         </div>
       </section>

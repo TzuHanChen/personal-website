@@ -42,7 +42,7 @@ function Hero() {
           <FolderIcon className="size-6 stroke-white group-hover:stroke-teal-100 group-active:stroke-teal-100 transition-colors duration-300" />
           <span className="text-white group-hover:text-teal-100 group-active:text-teal-100 transition-colors duration-300">瀏覽我的專案</span>
         </Link>
-        <a href="/TzuHanChen_Resume_20250308.pdf" target="_blank" className="rounded-full border border-gray-700 py-3 px-6 flex items-center gap-1.5 hover:bg-gray-100 active:bg-gray-100 transition-colors duration-300 group">
+        <a href="/TzuHanChen_Resume_20250315.pdf" target="_blank" className="rounded-full border border-gray-700 py-3 px-6 flex items-center gap-1.5 hover:bg-gray-100 active:bg-gray-100 transition-colors duration-300 group">
           <ArrowDownTrayIcon className="size-6" />
           <span>下載我的履歷</span>
         </a>
