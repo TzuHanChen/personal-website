@@ -54,11 +54,11 @@
 
 ## 前端開發
 
-使用 Next.js App router 作為網站框架。
+### 畫面切版、功能實作
 
-製作畫面時使用 Tailwind CSS。圖示選用 Heroicons，根據狀態去改變圖示的外觀。如果需要管理較複雜的 className 再用 clsx。
+使用 Next.js App router + Tailwind CSS + Heroicons 製作畫面。使用 TypeScript 管理資料型別。如果需要管理較複雜的 className 再用 clsx。
 
-使用 TypeScript 管理資料型別。
+### 資料串接
 
 利用 route handler 實作 API，在網頁中呼叫 API、取得專案的資料、產生畫面。
 
@@ -66,5 +66,15 @@
 * /api/get-project-list 取得所有專案的清單
 * /api/get-project-content 取得一個專案的內容
 * /api/get-project-prevnext 取得前一個專案和下一個專案
+
+### 優化
+
+針對響應式網頁設計、無障礙網頁設計、搜尋引擎優化、效能優化等議題，我使用 Lighthouse、PageSpeed Insights、metatags.io、Vercel Speed Insights 和 Vercel Toolbar 等工具進行測試、分析和優化。
+
+### 流量分析
+
+使用 Google Analytics 和 Vercel Web Analytics 進行流量追蹤和使用者行為分析，同時利用 Google Search Console 監測搜尋曝光、排名與點閱率。
+
+### 部署
 
 使用 Vercel 部署網站，同一個 GitHub repository 的兩個分支會分別產生測試網站和正式網站。
