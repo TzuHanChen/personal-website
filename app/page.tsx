@@ -1,10 +1,12 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FolderIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
+import { Project } from "@/app/type";
+import { Loading } from "@/app/project/page";
 import PageButton from "@/app/ui/page-button"
 import Card from "@/app/ui/card";
-import { Project } from "@/app/type";
 
 export const metadata: Metadata = {
   title: "陳子涵",
@@ -51,28 +53,30 @@ function Hero() {
   )
 }
 
-async function Projects() {
+async function ProjectCards() {
   const res = await fetch(
     process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-list' + '?count=5'
   );
   const projects: Project[] = await res.json();
 
+  return projects.map((project: Project) => {
+    return <Card key={project.slug}
+      href={`/project/${project.slug}`} imageUrl={`/image/${project.keyVisual}`}
+      title={project.name} description={project.description} tags={project.skill} />
+  })
+}
+
+function Projects() {
   return (
     <section className="mx-auto w-full max-w-270 flex flex-col gap-6 lg:gap-9">
       <h2 className="text-4xl text-gray-900 md:text-5xl">專案</h2>
 
       <div className="flex justify-center gap-6 flex-wrap *:w-full *:max-w-96 sm:grid sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project: Project, index) => {
-          return (
-            <Card key={project.slug} href={`/project/${project.slug}`}
-              imageUrl={`/image/${project.keyVisual}`} first={index === 0}
-              title={project.name} description={project.description} tags={project.skill} />
-          )
-        })}
-
+        <Suspense fallback={<Loading />}>
+          <ProjectCards />
+        </Suspense>
         <PageButton title="所有專案" href="/project" />
       </div>
-
     </section>
   )
 }
