@@ -1,7 +1,6 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Project } from "@/app/type";
-import Card, { Loading } from "@/app/ui/card";
+import Card from "@/app/ui/card";
 import PageButton from "@/app/ui/page-button";
 
 export const metadata: Metadata = {
@@ -41,8 +40,8 @@ async function ProjectCards() {
   );
   const projects: Project[] = await res.json();
 
-  return projects.map((project: Project) => {
-    return <Card key={project.slug}
+  return projects.map((project: Project, index) => {
+    return <Card key={project.slug} first={index === 0}
       href={`/project/${project.slug}`} imageUrl={`/image/${project.keyVisual}`}
       title={project.name} description={project.description} tags={project.skill} />
   })
@@ -59,9 +58,7 @@ export default function Projects() {
         </div>
 
         <div className="flex justify-center gap-6 flex-wrap *:w-full *:max-w-96 sm:grid sm:grid-cols-2 lg:grid-cols-3">
-          <Suspense fallback={<Loading />}>
-            <ProjectCards />
-          </Suspense>
+          <ProjectCards />
           <Updating />
           <PageButton title="前往舊版網站" outside href="https://tzuhanchen-archive.vercel.app/" />
         </div>

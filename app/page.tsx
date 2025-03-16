@@ -1,10 +1,9 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FolderIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 import { Project } from "@/app/type";
-import Card, { Loading } from "@/app/ui/card";
+import Card from "@/app/ui/card";
 import PageButton from "@/app/ui/page-button";
 
 export const metadata: Metadata = {
@@ -71,9 +70,7 @@ function Projects() {
       <h2 className="text-4xl text-gray-900 md:text-5xl">專案</h2>
 
       <div className="flex justify-center gap-6 flex-wrap *:w-full *:max-w-96 sm:grid sm:grid-cols-2 lg:grid-cols-3">
-        <Suspense fallback={<Loading />}>
-          <ProjectCards />
-        </Suspense>
+        <ProjectCards />
         <PageButton title="所有專案" href="/project" />
       </div>
     </section>
