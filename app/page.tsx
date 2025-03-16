@@ -4,9 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { FolderIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 import { Project } from "@/app/type";
-import { Loading } from "@/app/project/page";
-import PageButton from "@/app/ui/page-button"
-import Card from "@/app/ui/card";
+import Card, { Loading } from "@/app/ui/card";
+import PageButton from "@/app/ui/page-button";
 
 export const metadata: Metadata = {
   title: "陳子涵",

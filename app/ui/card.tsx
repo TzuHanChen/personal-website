@@ -33,3 +33,11 @@ export default function Card({
     </Link>
   )
 }
+
+export function Loading() {
+  return (
+    <div className="rounded-3xl min-h-80 bg-white p-6 flex flex-col justify-center items-center">
+      <p className="mb-3 text-2xl">載入中 ...</p>
+    </div>
+  )
+}

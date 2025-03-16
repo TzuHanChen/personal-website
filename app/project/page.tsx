@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
-import Card from "@/app/ui/card";
-import { Project } from "@/app/type";
-import PageButton from "@/app/ui/page-button";
 import { Suspense } from "react";
+import type { Metadata } from "next";
+import { Project } from "@/app/type";
+import Card, { Loading } from "@/app/ui/card";
+import PageButton from "@/app/ui/page-button";
 
 export const metadata: Metadata = {
   title: "專案 | 陳子涵",
@@ -18,14 +18,6 @@ export const metadata: Metadata = {
 };
 
 export const dynamic = 'force-dynamic';
-
-export function Loading() {
-  return (
-    <div className="rounded-3xl min-h-80 bg-white p-6 flex flex-col justify-center items-center">
-      <p className="mb-3 text-2xl">載入中 ...</p>
-    </div>
-  )
-}
 
 function Updating() {
   return (
