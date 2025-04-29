@@ -1,5 +1,30 @@
 export const projectData = [
   {
+    "slug": "todo-list",
+    "name": "待辦清單",
+    "description": "實作完整 CRUD 功能的任務管理系統",
+    "skill": ["Next.js", "React", "Tailwind CSS", "TypeScript", "Headless UI"],
+    "link": {
+      "title": "瀏覽網站",
+      "subtitle": "DEMO",
+      "href": "https://todo-list-tzuhanchen.vercel.app/",
+      "outside": true
+    },
+    "keyVisual": "todo-list.png",
+    "members": [
+      { name: "我", role: "使用者體驗" },
+      { name: "我", role: "介面設計" },
+      { name: "我", role: "網站前端" },
+      { name: "我", role: "網站後端" },
+    ],
+    "timeline": {
+      "start": "2025/02",
+      "period": "進行中",
+      "end": "進行中"
+    },
+    "outputs": ["flow", "ui", "pro", "page"]
+  },
+  {
     "slug": "personal-website",
     "name": "個人網站",
     "description": "我為自己設計與開發的個人網站，在此展示我的專案、經歷與技能",
