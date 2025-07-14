@@ -3,7 +3,7 @@ export const projectData = [
     "slug": "todo-list",
     "name": "待辦清單",
     "description": "實作完整 CRUD 功能的任務管理系統",
-    "skill": ["Next.js", "React", "Tailwind CSS", "TypeScript", "Headless UI"],
+    "skill": ["Next.js", "React", "Tailwind CSS", "TypeScript", "Headless UI", "PostgreSQL"],
     "link": {
       "title": "瀏覽網站",
       "subtitle": "DEMO",
