@@ -17,3 +17,7 @@
     border-color: var(--color-gray-200, currentColor);
   }
 }
+
+@theme {
+  --font-noto-sans-tc: "Noto Sans TC", sans-serif;
+}

@@ -9,6 +9,7 @@ import PageButton from "@/app/ui/page-button";
 export const metadata: Metadata = {
   title: "陳子涵",
   description: "陳子涵的個人網站",
+  icons: "/image/logo.svg",
   openGraph: {
     type: "website",
     url: process.env.NEXT_PUBLIC_FRONTEND_URL,
@@ -25,7 +26,7 @@ function Hero() {
   return (
     <section className="rounded-4xl bg-white py-12 px-6 flex flex-col gap-9">
       <div className="mx-auto w-full max-w-144 flex flex-col justify-center items-center gap-6 lg:justify-start lg:items-start">
-        <Image src="/image/icon.svg" alt="陳子涵的圖示" title="陳子涵的圖示"
+        <Image src="/image/logo.svg" alt="陳子涵的標誌" title="陳子涵的標誌"
           width={96} height={96} className="size-24 rounded-full" />
         <div>
           <h1 className="mb-3 text-3xl font-bold text-center text-gray-900 md:text-4xl lg:text-left">

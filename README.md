@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/TzuHanChen/personal-website/raw/main/app/icon.svg" alt="圖示" style="border-radius: 48px ; width: 96px" />
+  <img src="https://github.com/TzuHanChen/personal-website/raw/main/app/image/logo.svg" alt="陳子涵的標誌" title="陳子涵的標誌" style="border-radius: 48px; width: 96px" />
 </p>
 
 <h1 align="center">個人網站</h1>

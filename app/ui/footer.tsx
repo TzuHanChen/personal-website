@@ -9,7 +9,7 @@ export default function Footer() {
 
       <div className="mx-auto w-full max-w-240 flex flex-col justify-between gap-9 sm:flex-row">
         <Link href='/' className="flex items-center gap-3 self-start">
-          <Image src="/icon.svg" alt="logo" title="logo"
+          <Image src="/image/logo.svg" alt="陳子涵的標誌" title="陳子涵的標誌"
             width={36} height={36} className="rounded-full size-9" />
           <span>陳子涵</span>
         </Link>
