@@ -6,6 +6,7 @@ import PageButton from "@/app/ui/page-button";
 export const metadata: Metadata = {
   title: "專案 | 陳子涵",
   description: "陳子涵的專案",
+  icons: "/image/logo.svg",
   openGraph: {
     type: "website",
     url: process.env.NEXT_PUBLIC_FRONTEND_URL + '/project',

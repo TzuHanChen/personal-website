@@ -15,6 +15,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     return {
       title: `${project.name} | 陳子涵`,
       description: project.description,
+      icons: "/image/logo.svg",
       openGraph: {
         type: "website",
         url: process.env.NEXT_PUBLIC_FRONTEND_URL + '/project/' + slug,

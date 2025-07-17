@@ -5,7 +5,7 @@ export const NotoSansTC = Noto_Sans_TC({
 	subsets: ['latin'],
 	weight: ['400', '700'],
 	display: 'swap',
-	fallback: ['sans-serif']
+	variable: '--font-noto-sans-tc'
 });
 
 // export const NotoSerifTC = Noto_Serif_TC({

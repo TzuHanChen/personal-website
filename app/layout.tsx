@@ -1,21 +1,22 @@
+import "./globals.css";
+import Header from "@/app/ui/header";
+import Footer from "@/app/ui/footer";
+import { NotoSansTC } from "@/app/ui/fonts";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { NotoSansTC } from "@/app/ui/fonts";
-import Header from "@/app/ui/header";
-import Footer from "@/app/ui/footer";
-import "./globals.css";
 
 export default function RootLayout({ children }:
   Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="zh-TW">
-      <head></head>
-      <body className={`relative ${NotoSansTC.className} selection:bg-teal-700 selection:text-teal-100`}>
+      <head>
+        <GoogleAnalytics gaId="G-L1VLJWN6YZ" />
+      </head>
+      <body className={`relative ${NotoSansTC.variable} font-noto-sans-tc selection:bg-teal-700 selection:text-teal-100`}>
         <Header />
         {children}
         <Footer />
-        <GoogleAnalytics gaId="G-L1VLJWN6YZ" />
         <Analytics />
         <SpeedInsights />
       </body>
