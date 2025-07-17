@@ -10,11 +10,15 @@
 
 ## 開發工具
 
-Next.js + Tailwind CSS + TypeScript + Heroicons
+使用 Next.js + TypeScript + Tailwind CSS + Heroicons 製作網頁畫面
+
+使用 Next.js route handler 實作 REST API 讀取 JSON 資料，再串接 REST API 顯示專案資料
+
+使用 Vercel 取得 GitHub 的提交紀錄、自動部署
 
 ## 相關連結
 
-[上線網站 DEMO](https://tzuhanchen.vercel.app)：使用 Vercel 取得 GitHub repo 的提交紀錄、自動部署
+[上線網站 DEMO](https://tzuhanchen.vercel.app)
 
 [Figma 設計稿](https://www.figma.com/design/PxzP3aRo72mYSQQhZ89X8H/%E5%80%8B%E4%BA%BA%E7%B6%B2%E7%AB%99_%E4%BB%8B%E9%9D%A2%E8%A8%AD%E8%A8%88?node-id=1763-507&t=cLUYro6LVJxTKlHE-1)：內容包括 SEO 預覽圖、網站圖示、線框圖、元件
 

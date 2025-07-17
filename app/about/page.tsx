@@ -4,7 +4,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "關於我 | 陳子涵",
   description: "陳子涵的自我介紹",
-  openGraph: {
+  icons: "/image/logo.svg", openGraph: {
     type: "website",
     url: process.env.NEXT_PUBLIC_FRONTEND_URL + '/about',
     title: "關於我 | 陳子涵",
@@ -28,7 +28,7 @@ function Intro() {
         </div>
       </div>
       <div className="mx-auto w-full max-w-144 text-gray-600 leading-relaxed">
-        <p>我目前使用 Next.js, React, Tailwind CSS, TypeScript 等工具，完成公司任務與業餘專案的網頁切板與功能實作。在學期間有接觸過介面設計、使用者體驗、後端開發，現在仍有持續利用過往經歷，與負責這些職位的夥伴討論、溝通與合作。如果你想找我聊聊新的合作機會，請聯繫我！</p>
+        <p>我目前使用 Next.js, React, Tailwind CSS, TypeScript 等工具，完成公司任務與業餘專案的各項畫面切版與功能實作。之前有接觸過介面設計、使用者體驗、後端開發，現在仍有持續利用過往經歷，與負責這些職位的夥伴討論、溝通與合作。如果你想找我聊聊新的合作機會，請聯繫我！</p>
         <br />
         <p>在網站開發過程中，我致力於遵循響應式網頁設計和無障礙網頁設計的原則，確保各種裝置和瀏覽器的使用者都能順利瀏覽和操作網站。我了解搜尋引擎優化（SEO）的重要性，能夠根據行銷需求設定和測試必要的元標籤，讓網站在社群媒體貼文或搜尋結果中呈現完整、清晰的資訊。同時，我持續監測效能指標數據並優化程式碼，提升網站載入速度和使用體驗的流暢度。針對這些領域，我使用 Lighthouse、PageSpeed Insights、metatags.io、Vercel Speed Insights 和 Vercel Toolbar 等工具進行測試、分析和優化。</p>
         <br />
@@ -47,9 +47,9 @@ function Career() {
       company: '樂倍達數位科技股份有限公司',
       timeline: '2023/09 ~ 現今',
       description: [
-        '參與客戶公司的專案開發 (視訊會議網站)，使用 React + styled-components 調整介面與功能, 使用 Transifex 串接多語系字串。於新增功能之前，整合客戶需求和技術可行性，製作流程圖和線框圖，再實作畫面與功能、串接客戶提供的 API。原本手動回歸測試耗時 40 分鐘，撰寫Playwright 自動化腳本，耗時縮減至 5 分鐘。',
-        '參與客戶公司的新增功能開發 (網路電話彈出視窗)，根據客戶需求和客戶公司提供的 Next.js + SIP.js 專案，製作流程圖和線框圖，再加入 Tailwind CSS + Headless UI + Web Audio API (MediaStream, AudioContext) 實作畫面與功能，把各種狀態和事件的紀錄送到客戶公司的 API。',
-        '參與自己公司的產品開發 (物流服務)，使用 HTML + Tailwind CSS + JavaScript 切版，撰寫 GitLab CICD pipeline 腳本、設定環境變數，自動部署到測試版網址，手動部署到正式版網址。'
+        '負責開發客戶公司網路電話彈出視窗，繪製流程圖與線框圖，使用 Next.js + TypeScript + Tailwind CSS + Headless UI + SIP.js + Web Audio API + Lucide Icons 實作通話與音訊功能。串接 API 實作登入機制（帳號密碼換取 token 並存入 cookie，送出 token 取得帳號密碼）、log 記錄、密碼更新與通訊錄查詢等功能。',
+        '參與客戶公司的視訊會議網站開發，使用 React + styled-components 調整介面與功能, 使用 Transifex 串接多語系字串。於新增功能之前，整合客戶需求和技術可行性，製作流程圖和線框圖，再實作畫面與功能、串接客戶提供的 API。原本手動回歸測試耗時 40 分鐘，撰寫 Playwright 自動化測試腳本，耗時縮減至 5 分鐘。',
+        '參與自己公司的物流服務產品開發，使用 HTML + Tailwind CSS + JavaScript 切版，撰寫 GitLab CI/CD pipeline 腳本、設定環境變數，自動部署到測試版網址，手動部署到正式版網址。'
       ]
     },
     {

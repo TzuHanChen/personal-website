@@ -36,14 +36,14 @@ function Hero() {
         </div>
       </div>
       <p className="mx-auto w-full max-w-144 text-gray-600 leading-relaxed">
-        我目前使用 Next.js, React, Tailwind CSS, TypeScript 等工具，完成公司任務與業餘專案的網頁切板與功能實作。在學期間有接觸過介面設計、使用者體驗、後端開發，現在仍有持續利用過往經歷，與負責這些職位的夥伴討論、溝通與合作。如果你想找我聊聊新的合作機會，請聯繫我！
+        我目前使用 Next.js, React, Tailwind CSS, TypeScript 等工具，完成公司任務與業餘專案的各項畫面切版與功能實作。之前有接觸過介面設計、使用者體驗、後端開發，現在仍有持續利用過往經歷，與負責這些職位的夥伴討論、溝通與合作。如果你想找我聊聊新的合作機會，請聯繫我！
       </p>
       <div className="mx-auto w-full max-w-144 flex justify-center gap-6 flex-wrap lg:justify-start">
         <Link href="/project" className="rounded-full bg-gray-800 py-3 px-6 flex items-center gap-1.5 hover:bg-teal-700 active:bg-teal-700 transition-colors duration-300 group">
           <FolderIcon className="size-6 stroke-white group-hover:stroke-teal-100 group-active:stroke-teal-100 transition-colors duration-300" />
           <span className="text-white group-hover:text-teal-100 group-active:text-teal-100 transition-colors duration-300">瀏覽我的專案</span>
         </Link>
-        <a href="/TzuHanChen_Resume_20250315.pdf" target="_blank" className="rounded-full border border-gray-700 py-3 px-6 flex items-center gap-1.5 hover:bg-gray-100 active:bg-gray-100 transition-colors duration-300 group">
+        <a href="/TzuHanChen_Resume_20250717.pdf" target="_blank" className="rounded-full border border-gray-700 py-3 px-6 flex items-center gap-1.5 hover:bg-gray-100 active:bg-gray-100 transition-colors duration-300 group">
           <ArrowDownTrayIcon className="size-6" />
           <span>下載我的履歷</span>
         </a>
