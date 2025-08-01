@@ -5,13 +5,16 @@ import Outputs from "@/app/project/[slug]/output";
 import ReactMarkdown from 'react-markdown';
 import PageButton from "@/app/ui/page-button";
 import { Project } from "@/app/type";
+import { getBaseUrl } from "@/lib/url";
 
 type Params = Promise<{ slug: string }>;
 
+const baseUrl = getBaseUrl();
+
 async function Content({ slug }: { slug: string }) {
   const markdown = await fetch(
-    // process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-markdown' + `?slug=${slug}`
-    process.env.NEXT_PUBLIC_FRONTEND_URL + '/markdown/' + slug + '.md'
+    // `${baseUrl}/api/get-project-markdown?slug=${slug}`
+    `${baseUrl}/markdown/${slug}.md`
   ).then(res => res.text());
 
   return (
@@ -32,7 +35,7 @@ async function Content({ slug }: { slug: string }) {
 
 async function PrevNext({ slug }: { slug: string }) {
   const data = await fetch(
-    process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-prevnext' + `?slug=${slug}`
+    `${baseUrl}/api/get-project-prevnext?slug=${slug}`
   ).then(res => res.json());
 
   return (
@@ -49,7 +52,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
   const slug = (await params).slug;
 
   const res = await fetch(
-    process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-content' + `?slug=${slug}`
+    `${baseUrl}/api/get-project-content?slug=${slug}`
   );
   const project: Project = await res.json();
 

@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { getBaseUrl } from "@/lib/url";
+
+const baseUrl = getBaseUrl();
 
 export const metadata: Metadata = {
   title: "關於我 | 陳子涵",
   description: "陳子涵的自我介紹",
-  icons: "/image/logo.svg", openGraph: {
-    type: "website",
-    url: process.env.NEXT_PUBLIC_FRONTEND_URL + '/about',
+  openGraph: {
+    url: `${baseUrl}/about`,
     title: "關於我 | 陳子涵",
     description: "陳子涵的自我介紹",
-    siteName: "陳子涵",
-    images: process.env.NEXT_PUBLIC_FRONTEND_URL + '/image/personal-website.png'
+    images: `${baseUrl}/image/personal-website.png`
   }
 };
 

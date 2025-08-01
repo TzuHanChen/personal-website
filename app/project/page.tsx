@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import { Project } from "@/app/type";
 import Card from "@/app/ui/card";
 import PageButton from "@/app/ui/page-button";
+import { getBaseUrl } from "@/lib/url";
+
+const baseUrl = getBaseUrl();
 
 export const metadata: Metadata = {
   title: "專案 | 陳子涵",
   description: "陳子涵的專案",
-  icons: "/image/logo.svg",
   openGraph: {
-    type: "website",
-    url: process.env.NEXT_PUBLIC_FRONTEND_URL + '/project',
+    url: `${baseUrl}/project`,
     title: "專案 | 陳子涵",
     description: "陳子涵的專案",
-    siteName: "陳子涵",
-    images: process.env.NEXT_PUBLIC_FRONTEND_URL + '/image/personal-website.png'
+    images: `${baseUrl}/image/personal-website.png`
   }
 };
 
@@ -36,9 +36,7 @@ function Updating() {
 }
 
 async function ProjectCards() {
-  const res = await fetch(
-    process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-list'
-  );
+  const res = await fetch(`${baseUrl}/api/get-project-list`);
   const projects: Project[] = await res.json();
 
   return projects.map((project: Project, index) => {

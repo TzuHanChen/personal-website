@@ -1,5 +1,6 @@
 import { type NextRequest } from 'next/server';
 import { Project } from "@/app/type";
+import { getBaseUrl } from "@/lib/url";
 
 export async function GET(request: NextRequest) {
   const req = request.nextUrl.searchParams;
@@ -8,8 +9,8 @@ export async function GET(request: NextRequest) {
   if (!slug) {
     return Response.json({ message: "slug not provided" }, { status: 404 });
   } else {
-    const res = await fetch(
-      process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/project-data',
+    const baseUrl = getBaseUrl();
+    const res = await fetch(`${baseUrl}/api/project-data`,
       { headers: { 'Content-Type': 'application/json' } }
     ).then(res => res.json());
 

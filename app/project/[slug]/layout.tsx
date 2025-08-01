@@ -3,8 +3,11 @@ import { projectData } from "@/app/api/project-data/project-data";
 import { Project } from "@/app/type";
 import NotFound from "@/app/not-found";
 import PageButton from "@/app/ui/page-button";
+import { getBaseUrl } from "@/lib/url";
 
 type Params = Promise<{ slug: string }>;
+
+const baseUrl = getBaseUrl();
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const slug = (await params).slug;
@@ -15,14 +18,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     return {
       title: `${project.name} | 陳子涵`,
       description: project.description,
-      icons: "/image/logo.svg",
       openGraph: {
-        type: "website",
-        url: process.env.NEXT_PUBLIC_FRONTEND_URL + '/project/' + slug,
+        url: `${baseUrl}/project/${slug}`,
         title: `${project.name} | 陳子涵`,
         description: project.description,
-        siteName: "陳子涵",
-        images: process.env.NEXT_PUBLIC_FRONTEND_URL + '/image/' + project.keyVisual
+        images: `${baseUrl}/image/${project.keyVisual}`
       }
     }
   } else {
@@ -51,7 +51,7 @@ export default async function ProjectLayout({ children, params }:
   const { slug } = await params;
 
   const res = await fetch(
-    process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-content' + `?slug=${slug}`
+    `${baseUrl}/api/get-project-content?slug=${slug}`
   );
   const project: Project = await res.json();
 
