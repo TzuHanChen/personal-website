@@ -40,7 +40,7 @@ async function ProjectCards() {
   const projects: Project[] = await res.json();
 
   return projects.map((project: Project, index) => {
-    return <Card key={project.slug} first={index === 0}
+    return <Card key={project.slug}
       href={`/project/${project.slug}`} imageUrl={`/image/${project.keyVisual}`}
       title={project.name} description={project.description} tags={project.skill} />
   })
