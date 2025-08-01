@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import clsx from 'clsx';
 import { UserCircleIcon } from '@heroicons/react/24/solid';
-import { Project } from "@/app/type";
+import { Project } from "@/lib/types";
 
 function Member({ name, role }: { name: string, role: string }) {
   const icon = (name === "我")

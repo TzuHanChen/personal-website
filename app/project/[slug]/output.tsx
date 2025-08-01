@@ -1,5 +1,5 @@
 import { UserIcon, ArrowRightIcon, PencilIcon, PaintBrushIcon, DocumentTextIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline';
-import { Project } from "@/app/type";
+import { Project } from "@/lib/types";
 
 /**
  * 產出項目

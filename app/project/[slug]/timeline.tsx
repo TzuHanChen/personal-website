@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { DocumentIcon, CalendarDateRangeIcon, CheckBadgeIcon } from '@heroicons/react/24/outline';
-import { Project } from "@/app/type";
+import { Project } from "@/lib/types";
 
 function Time({ stage, text }: { stage: string, text: string }) {
   let icon = <></>;

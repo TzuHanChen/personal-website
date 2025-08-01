@@ -1,5 +1,5 @@
 import { type NextRequest } from 'next/server';
-import { Project } from "@/app/type";
+import { Project } from "@/lib/types";
 import { getBaseUrl } from "@/lib/url";
 
 export async function GET(request: NextRequest) {

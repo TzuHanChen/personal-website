@@ -4,7 +4,7 @@ import Timeline from "@/app/project/[slug]/timeline";
 import Outputs from "@/app/project/[slug]/output";
 import ReactMarkdown from 'react-markdown';
 import PageButton from "@/app/ui/page-button";
-import { Project } from "@/app/type";
+import { Project } from "@/lib/types";
 import { getBaseUrl } from "@/lib/url";
 
 type Params = Promise<{ slug: string }>;

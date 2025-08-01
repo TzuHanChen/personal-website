@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FolderIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
-import { Project } from "@/app/type";
+import { Project } from "@/lib/types";
 import Card from "@/app/ui/card";
 import PageButton from "@/app/ui/page-button";
 import { getBaseUrl } from "@/lib/url";

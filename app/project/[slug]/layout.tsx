@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { projectData } from "@/app/api/project-data/project-data";
-import { Project } from "@/app/type";
+import { Project } from "@/lib/types";
 import NotFound from "@/app/not-found";
 import PageButton from "@/app/ui/page-button";
 import { getBaseUrl } from "@/lib/url";
