@@ -1,5 +1,5 @@
 import { sql } from "@/lib/db-init";
-import { initProjectsTable } from "@/lib/db-init";
+import { initProjectsTable, initSkillsTable } from "@/lib/db-init";
 
 async function seedProjectsTable() {
   try {
@@ -25,8 +25,50 @@ async function seedProjectsTable() {
   }
 }
 
+async function seedSkillsTable() {
+  try {
+    await initSkillsTable()
+
+    await sql`TRUNCATE TABLE skills RESTART IDENTITY`
+
+    await sql`
+      INSERT INTO skills (id, name)
+      VALUES 
+        (1, 'Miro'),
+        (2, 'Figma'),
+        (3, 'FigJam'),
+        (4, 'Penpot'),
+        (5, 'Git'),
+        (6, 'GitHub'),
+        (7, 'GitLab'),
+        (8, 'XAMPP'),
+        (9, 'PHP'),
+        (10, 'MySQL'),
+        (11, 'PostgreSQL'),
+        (12, 'HTML'),
+        (13, 'CSS'),
+        (14, 'SCSS'),
+        (15, 'Tailwind CSS'),
+        (16, 'JavaScript'),
+        (17, 'TypeScript'),
+        (18, 'React'),
+        (19, 'Next.js'),
+        (20, 'GA4'),
+        (21, 'Headless UI'),
+        (22, 'React Hook Form'),
+        (23, 'Expo'),
+        (24, 'React Native')
+    `
+
+    console.log("skills table seeded successfully\n")
+  } catch (error) {
+    console.error("Error seeding skills table:", error, "\n")
+  }
+}
+
 async function seedDatabase() {
   await seedProjectsTable()
+  await seedSkillsTable()
 }
 
 seedDatabase()
