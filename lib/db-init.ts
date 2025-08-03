@@ -88,44 +88,13 @@ export async function initProjectMemberTable() {
       CREATE TABLE IF NOT EXISTS project_member (
         id SERIAL PRIMARY KEY,
         project_id INTEGER REFERENCES projects(id) ON DELETE CASCADE,
-        member_name TEXT NOT NULL,
-        role_id INTEGER REFERENCES roles(id) ON DELETE CASCADE
+        role_id INTEGER REFERENCES roles(id) ON DELETE CASCADE,
+        members_name TEXT NOT NULL
       );
     `
     console.log("project_member table initialized")
   } catch (error) {
     console.error("Error initializing project_member table:", error)
-    throw error
-  }
-}
-
-export async function initOutputsTable() {
-  try {
-    await sql`
-      CREATE TABLE IF NOT EXISTS outputs (
-        id SERIAL PRIMARY KEY,
-        name TEXT UNIQUE NOT NULL
-      );
-    `
-    console.log("outputs table initialized")
-  } catch (error) {
-    console.error("Error initializing outputs table:", error)
-    throw error
-  }
-}
-
-export async function initProjectOutputTable() {
-  try {
-    await sql`
-      CREATE TABLE IF NOT EXISTS project_output (
-        project_id INTEGER REFERENCES projects(id) ON DELETE CASCADE,
-        output_id INTEGER REFERENCES outputs(id) ON DELETE CASCADE,
-        PRIMARY KEY (project_id, output_id)
-      );
-    `
-    console.log("project_output table initialized")
-  } catch (error) {
-    console.error("Error initializing project_output table:", error)
     throw error
   }
 }
