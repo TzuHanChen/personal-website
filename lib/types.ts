@@ -1,11 +1,14 @@
 export type Project = {
+    id: number,
     slug: string,
     name: string,
     description: string,
+    key_visual: string,
+    link: string,
+    timeline: string,
+    output: string,
     skill: string[],
-    link: { title: string, subtitle: string, href: string, outside: boolean },
-    keyVisual: string,
-    members: { name: string, role: string }[],
-    timeline: { start: string, period: string, end: string },
-    outputs: ["uxr" | "flow" | "ui" | "pro" | "page" | "site"]
+    members: { role_id: string, members_name: string }[],
+    prev: { name: string, slug: string, },
+    next: { name: string, slug: string, },
 }

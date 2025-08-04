@@ -1,5 +1,4 @@
-import { initProjectMemberTable, initRolesTable, sql } from "@/lib/db-init";
-import { initProjectsTable, initSkillsTable, initProjectSkillTable } from "@/lib/db-init";
+import { sql, initProjectsTable, initSkillsTable, initProjectSkillTable, initRolesTable, initProjectMemberTable } from "@/lib/db-init";
 
 async function seedProjectsTable() {
   try {
