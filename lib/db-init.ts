@@ -26,7 +26,8 @@ export async function initProjectsTable() {
         description TEXT NOT NULL,
         key_visual TEXT NOT NULL,
         link TEXT,
-        timeline TEXT NOT NULL
+        timeline TEXT NOT NULL,
+        output TEXT NOT NULL
       );
     `
     console.log("projects table initialized")
