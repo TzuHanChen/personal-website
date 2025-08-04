@@ -7,8 +7,13 @@ export type Project = {
     link: string,
     timeline: string,
     output: string,
-    skill: string[],
+    skills: Skill[],
     members: { role_id: string, members_name: string }[],
     prev: { name: string, slug: string, },
     next: { name: string, slug: string, },
+}
+
+export type Skill = {
+    id: number,
+    name: string,
 }
