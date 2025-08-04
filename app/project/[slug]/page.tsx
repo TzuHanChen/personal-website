@@ -12,10 +12,7 @@ type Params = Promise<{ slug: string }>;
 const baseUrl = getBaseUrl();
 
 async function Content({ slug }: { slug: string }) {
-  const markdown = await fetch(
-    // `${baseUrl}/api/get-project-markdown?slug=${slug}`
-    `${baseUrl}/markdown/${slug}.md`
-  ).then(res => res.text());
+  const markdown = await fetch(`${baseUrl}/markdown/${slug}.md`).then(res => res.text());
 
   return (
     <ReactMarkdown className="mx-auto mb-12 lg:mb-24 w-full max-w-192
@@ -50,27 +47,26 @@ async function PrevNext({ slug }: { slug: string }) {
 
 export default async function ProjectPage({ params }: { params: Params }) {
   const slug = (await params).slug;
-
-  const res = await fetch(
-    `${baseUrl}/api/get-project-content?slug=${slug}`
-  );
+  const res = await fetch(`${baseUrl}/api/project/content?slug=${slug}`);
   const project: Project = await res.json();
 
   return (
     <section className="py-24 px-6 flex flex-col gap-12 md:px-24 md:gap-16 lg:flex-1 lg:py-36 lg:px-12 lg:gap-24 xl:px-24">
-      <Image src={`/image/${project.keyVisual}`} width={768} height={432} priority
+      <Image src={`/image/${project.key_visual}`} width={768} height={432} priority
         alt={`${project.name} 專案主視覺`} title={`${project.name} 專案主視覺`}
         className="mx-auto w-full max-w-192 aspect-video rounded-3xl bg-gray-300" />
 
-      <Members members={project.members} />
+      member, timeline, output
+      {/* <Members members={project.members} /> */}
 
-      <Timeline timeline={project.timeline} />
+      {/* <Timeline timeline={project.timeline} /> */}
 
-      <Outputs outputs={project.outputs} />
+      {/* <Outputs outputs={project.outputs} /> */}
 
       <Content slug={slug} />
 
-      <PrevNext slug={slug} />
+      prev, next
+      {/* <PrevNext slug={slug} /> */}
     </section>
   )
 }

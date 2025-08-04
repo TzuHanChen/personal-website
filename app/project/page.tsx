@@ -38,10 +38,7 @@ async function ProjectCards() {
   const res = await fetch(`${baseUrl}/api/project/list`);
   const projects: Project[] = await res.json();
 
-  return projects.map((project: Project, index) => {
-    return <Card key={index} slug={project.slug} key_visual={project.key_visual}
-      name={project.name} description={project.description} />
-  })
+  return projects.map((project: Project, index) => <Card key={index} {...project} />)
 }
 
 export default function Projects() {
