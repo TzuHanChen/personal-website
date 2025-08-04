@@ -53,13 +53,12 @@ function Hero() {
 }
 
 async function ProjectCards() {
-  const res = await fetch(`${baseUrl}/api/get-project-list?count=5`);
+  const res = await fetch(`${baseUrl}/api/project/list?count=5`);
   const projects: Project[] = await res.json();
 
-  return projects.map((project: Project) => {
-    return <Card key={project.slug}
-      href={`/project/${project.slug}`} imageUrl={`/image/${project.keyVisual}`}
-      title={project.name} description={project.description} tags={project.skill} />
+  return projects.map((project: Project, index) => {
+    return <Card key={index} slug={project.slug} key_visual={project.key_visual}
+      name={project.name} description={project.description} />
   })
 }
 

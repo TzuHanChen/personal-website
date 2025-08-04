@@ -28,7 +28,6 @@ function Updating() {
         <li>加入舊版網站沒有的新專案</li>
         <li>加入舊版網站的舊專案</li>
         <li>加入舊版網站的文章</li>
-        <li>新增各種功能（專案的篩選排序搜尋、深色模式 ...）</li>
         <li>製作全新的小作品或專案</li>
       </ol>
     </div>
@@ -36,13 +35,12 @@ function Updating() {
 }
 
 async function ProjectCards() {
-  const res = await fetch(`${baseUrl}/api/get-project-list`);
+  const res = await fetch(`${baseUrl}/api/project/list`);
   const projects: Project[] = await res.json();
 
   return projects.map((project: Project, index) => {
-    return <Card key={project.slug}
-      href={`/project/${project.slug}`} imageUrl={`/image/${project.keyVisual}`}
-      title={project.name} description={project.description} tags={project.skill} />
+    return <Card key={index} slug={project.slug} key_visual={project.key_visual}
+      name={project.name} description={project.description} />
   })
 }
 
@@ -53,7 +51,6 @@ export default function Projects() {
       <section className="mx-auto w-full max-w-270 flex flex-col gap-6 lg:gap-9">
         <div className="flex flex-col gap-6">
           <h2 className="text-4xl text-gray-900 md:text-5xl">專案</h2>
-          {/* <p className="text-gray-900">篩選、排序、版面</p> */}
         </div>
 
         <div className="flex justify-center gap-6 flex-wrap *:w-full *:max-w-96 sm:grid sm:grid-cols-2 lg:grid-cols-3">
