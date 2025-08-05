@@ -31,19 +31,19 @@ export async function GET(request: NextRequest) {
         WHERE project_id = ${projectId}
       `;
       const members = await sql`
-        SELECT project_member.id, roles.name, members_name FROM project_member
+        SELECT project_member.id, roles.name AS role_name, members_name FROM project_member
         INNER JOIN roles ON roles.id = project_member.role_id
         WHERE project_id = ${projectId}
       `;
       const projectCount = await sql`SELECT COUNT(*) FROM projects`;
       const count = Number.parseInt(projectCount[0].count);
-      const nextId = (projectId < count - 1) ? projectId + 1 : 1;
-      const next = await sql`
-        SELECT slug, name FROM projects WHERE id = ${nextId}
-      `;
-      const prevId = (projectId > 0) ? projectId - 1 : count - 1;
+      const prevId = (projectId < count) ? projectId + 1 : 1;
       const prev = await sql`
         SELECT slug, name FROM projects WHERE id = ${prevId}
+      `;
+      const nextId = (projectId > 1) ? projectId - 1 : count;
+      const next = await sql`
+        SELECT slug, name FROM projects WHERE id = ${nextId}
       `;
       return Response.json({ ...project, skills, members, next: next[0], prev: prev[0] }, { status: 200 });
     } else {

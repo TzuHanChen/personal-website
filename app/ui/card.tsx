@@ -1,14 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { Project } from "@/lib/types";
 
-export default function Card({ slug, key_visual, name, description }:
-  Pick<Project, 'slug' | 'key_visual' | 'name' | 'description'>) {
+export default function Card({ linkHref, imageSrc, name, description }: {
+  linkHref: string, imageSrc: string, name: string, description: string
+}) {
   return (
-    <Link href={`/project/${slug}`}
+    <Link href={linkHref}
       className="shadow-sm rounded-3xl flex flex-col group hover:shadow-xl transition-shadow duration-500">
-      <Image src={`/image/${key_visual}`} alt={name} title={name} width={384} height={216}
+      <Image src={imageSrc} alt={name} title={name} width={384} height={216}
         className="w-full aspect-video object-cover rounded-t-3xl bg-gray-200" />
       <div className="rounded-b-3xl flex-1 bg-white p-6 flex flex-col justify-between">
         <div>
@@ -20,12 +20,6 @@ export default function Card({ slug, key_visual, name, description }:
           </h3>
           <p className="text-gray-700">{description}</p>
         </div>
-
-        {/* {skills && <div className="flex gap-1.5 flex-wrap">
-          {skills.map((skill) => {
-            return <span key={skill.id} className="rounded-full py-1 px-3 bg-teal-50 text-teal-700 text-sm">{skill.name}</span>
-          })}
-        </div>} */}
       </div>
     </Link>
   )

@@ -1,9 +1,8 @@
+import type { Metadata } from "next";
 import Image from "next/image";
-import Members from "@/app/project/[slug]/members";
-import Timeline from "@/app/project/[slug]/timeline";
-import Outputs from "@/app/project/[slug]/output";
-import ReactMarkdown from 'react-markdown';
 import PageButton from "@/app/ui/page-button";
+import NotFound from "@/app/not-found";
+import { Markdown } from "@/app/ui/markdown";
 import { Project } from "@/lib/types";
 import { getBaseUrl } from "@/lib/url";
 
@@ -11,62 +10,105 @@ type Params = Promise<{ slug: string }>;
 
 const baseUrl = getBaseUrl();
 
-async function Content({ slug }: { slug: string }) {
-  const markdown = await fetch(`${baseUrl}/markdown/${slug}.md`).then(res => res.text());
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const slug = (await params).slug;
+  const res = await fetch(`${baseUrl}/api/project/content?slug=${slug}`);
+  const project: Project = await res.json();
+
+  if (project) {
+    return {
+      title: `${project.name} | 陳子涵`,
+      description: project.description,
+      openGraph: {
+        url: `${baseUrl}/project/${slug}`,
+        title: `${project.name} | 陳子涵`,
+        description: project.description,
+        images: `${baseUrl}/image/${project.key_visual}`
+      }
+    }
+  } else {
+    return {
+      title: "404 | 陳子涵",
+      description: "404 Not Found",
+    }
+  }
+}
+
+function ProjectSideBar({ name, description, skills, link }:
+  Pick<Project, 'name' | 'description' | 'skills' | 'link'>) {
+  const skillTags = skills.map((skill) => {
+    return <span key={skill.id}
+      className="rounded-full border border-teal-200 py-1 px-3 bg-teal-50 text-teal-700">
+      {skill.name}</span>
+  })
+  const linkType = link.startsWith('https://github.com') ? 'CODE'
+    : link.startsWith('https://') ? 'SITE' : 'PAGE';
+  const linkTitle = (linkType === 'CODE') ? '原始碼'
+    : (linkType === 'SITE') ? '開啟網站' : '開啟網頁';
 
   return (
-    <ReactMarkdown className="mx-auto mb-12 lg:mb-24 w-full max-w-192
-      [&>h2]:my-6 [&>h2]:text-gray-900 [&>h2]:text-2xl
-      md:[&>h2]:text-3xl lg:[&>h2]:my-12 lg:[&>h2]:text-4xl
-      [&>h3]:my-4 [&>h3]:text-gray-900 [&>h3]:text-lg
-      md:[&>h3]:text-xl lg:[&>h3]:my-8 lg:[&>h3]:text-2xl
-      [&>p]:my-2 [&>p]:text-gray-600
-      [&>ul]:pl-5 [&>ul>li]:list-disc [&>ul>li]:text-gray-600
-      [&>hr]:my-8 [&>hr]:mx-auto [&>hr]:border-gray-300 [&>hr]:w-1/3 lg:[&>hr]:my-16
-      [&>p>img]:my-12 [&>p>img]:mx-auto
-      [&_a]:underline active:[&_a]:text-teal-600 [&_a]:transition-colors [&_a]:duration-300">
-      {markdown}
-    </ReactMarkdown>
+    <div className="py-24 px-6 flex flex-col gap-6 md:px-24 lg:sticky lg:top-0 lg:w-96 lg:h-screen lg:py-36 lg:px-12">
+      <h1 className="text-3xl text-gray-800 md:text-4xl lg:text-5xl">{name}</h1>
+      <p className="text-gray-600">{description}</p>
+      <div className="flex gap-1.5 flex-wrap">{skillTags}</div>
+      {link !== "" &&
+        <PageButton title={linkTitle} subtitle={linkType}
+          href={link} outside={linkType !== 'PAGE'} />}
+    </div>
   )
 }
 
-async function PrevNext({ slug }: { slug: string }) {
-  const data = await fetch(
-    `${baseUrl}/api/get-project-prevnext?slug=${slug}`
-  ).then(res => res.json());
+function ProjectContent({ key_visual, name, members, timeline, output, slug, prev, next }:
+  Pick<Project, 'key_visual' | 'name' | 'members' | 'timeline' | 'output' | 'slug' | 'prev' | 'next'>) {
+  const membersList = members.map(role => {
+    return <li key={role.id} className="text-gray-600">
+      {role.role_name}：{role.members_name}</li>
+  })
 
   return (
-    <div className="mx-auto w-full max-w-192 flex flex-col gap-6 md:flex-row *:flex-1">
-      <PageButton title={data.prev.name} subtitle="上一個專案" align="left"
-        href={`/project/${data.prev.slug}`} />
-      <PageButton title={data.next.name} subtitle="下一個專案" align="right"
-        href={`/project/${data.next.slug}`} />
-    </div>
+    <section className="py-24 px-6 flex flex-col gap-12 md:px-24 md:gap-16 lg:flex-1 lg:py-36 lg:px-12 lg:gap-24 xl:px-24">
+      <Image src={`/image/${key_visual}`} width={768} height={432} priority
+        alt={`${name} 專案主視覺`} title={`${name} 專案主視覺`}
+        className="mx-auto w-full max-w-192 aspect-video object-cover rounded-3xl bg-gray-300" />
+
+      <div className="block md:flex gap-6">
+        <div className="w-full md:w-1/2">
+          <h3 className="mb-4 text-gray-800 text-lg md:text-xl lg:text-2xl">成員</h3>
+          <ol className="pl-5 list-disc text-gray-600">{membersList}</ol>
+        </div>
+        <div className="w-full md:w-1/2">
+          <h3 className="mb-4 text-gray-800 text-lg md:text-xl lg:text-2xl">時間</h3>
+          <p className="text-gray-600">{timeline}</p>
+          <h3 className="mt-8 mb-4 text-gray-800 text-lg md:text-xl lg:text-2xl">產出</h3>
+          <p className="text-gray-600">{output}</p>
+        </div>
+      </div>
+
+      <Markdown slug={slug} />
+
+      <div className="mx-auto w-full max-w-192 flex flex-col gap-6 md:flex-row *:flex-1">
+        <PageButton title={prev.name} subtitle="上一個專案" align="left"
+          href={`/project/${prev.slug}`} />
+        <PageButton title={next.name} subtitle="下一個專案" align="right"
+          href={`/project/${next.slug}`} />
+      </div>
+    </section>
   )
 }
 
 export default async function ProjectPage({ params }: { params: Params }) {
   const slug = (await params).slug;
   const res = await fetch(`${baseUrl}/api/project/content?slug=${slug}`);
-  const project: Project = await res.json();
 
-  return (
-    <section className="py-24 px-6 flex flex-col gap-12 md:px-24 md:gap-16 lg:flex-1 lg:py-36 lg:px-12 lg:gap-24 xl:px-24">
-      <Image src={`/image/${project.key_visual}`} width={768} height={432} priority
-        alt={`${project.name} 專案主視覺`} title={`${project.name} 專案主視覺`}
-        className="mx-auto w-full max-w-192 aspect-video object-cover rounded-3xl bg-gray-300" />
-
-      member, timeline, output
-      {/* <Members members={project.members} /> */}
-
-      {/* <Timeline timeline={project.timeline} /> */}
-
-      {/* <Outputs outputs={project.outputs} /> */}
-
-      <Content slug={slug} />
-
-      prev, next
-      {/* <PrevNext slug={slug} /> */}
-    </section>
-  )
+  if (res.ok) {
+    const project: Project = await res.json();
+    return (
+      <main className="min-h-screen bg-gray-50 md:ml-20 lg:flex">
+        <ProjectSideBar {...project} />
+        <ProjectContent {...project} />
+      </main>
+    )
+  } else {
+    return <NotFound />
+  }
 }
