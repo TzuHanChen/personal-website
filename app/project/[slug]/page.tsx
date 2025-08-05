@@ -54,7 +54,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
     <section className="py-24 px-6 flex flex-col gap-12 md:px-24 md:gap-16 lg:flex-1 lg:py-36 lg:px-12 lg:gap-24 xl:px-24">
       <Image src={`/image/${project.key_visual}`} width={768} height={432} priority
         alt={`${project.name} 專案主視覺`} title={`${project.name} 專案主視覺`}
-        className="mx-auto w-full max-w-192 aspect-video rounded-3xl bg-gray-300" />
+        className="mx-auto w-full max-w-192 aspect-video object-cover rounded-3xl bg-gray-300" />
 
       member, timeline, output
       {/* <Members members={project.members} /> */}
