@@ -2,21 +2,21 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FolderIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
-import { Project } from "@/app/type";
+import { Project } from "@/lib/types";
 import Card from "@/app/ui/card";
 import PageButton from "@/app/ui/page-button";
+import { getBaseUrl } from "@/lib/url";
+
+const baseUrl = getBaseUrl();
 
 export const metadata: Metadata = {
   title: "陳子涵",
   description: "陳子涵的個人網站",
-  icons: "/image/logo.svg",
   openGraph: {
-    type: "website",
-    url: process.env.NEXT_PUBLIC_FRONTEND_URL,
+    url: baseUrl,
     title: "陳子涵",
     description: "陳子涵的個人網站",
-    siteName: "陳子涵",
-    images: process.env.NEXT_PUBLIC_FRONTEND_URL + '/image/personal-website.png'
+    images: `${baseUrl}/image/personal-website.png`
   }
 };
 
@@ -53,16 +53,14 @@ function Hero() {
 }
 
 async function ProjectCards() {
-  const res = await fetch(
-    process.env.NEXT_PUBLIC_FRONTEND_URL + '/api/get-project-list' + '?count=5'
-  );
+  const res = await fetch(`${baseUrl}/api/project/list?count=5`);
   const projects: Project[] = await res.json();
 
-  return projects.map((project: Project) => {
-    return <Card key={project.slug}
-      href={`/project/${project.slug}`} imageUrl={`/image/${project.keyVisual}`}
-      title={project.name} description={project.description} tags={project.skill} />
-  })
+  return projects.map((project: Project, index) =>
+    <Card key={index} linkHref={`/project/${project.slug}`}
+      imageSrc={`/image/${project.key_visual}`}
+      name={project.name} description={project.description} />
+  )
 }
 
 function Projects() {

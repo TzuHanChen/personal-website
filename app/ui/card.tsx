@@ -2,35 +2,24 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
-export default function Card({
-  first, href = "/", imageUrl = "/image/in-progress.png", title, description, tags
-}: {
-  first?: boolean, href?: string, imageUrl?: string,
-  title: string, description: string, tags?: string[]
+export default function Card({ linkHref, imageSrc, name, description }: {
+  linkHref: string, imageSrc: string, name: string, description: string
 }) {
-  if (first === true) console.log('first');
-
   return (
-    <Link href={href} className="shadow-sm rounded-3xl flex flex-col group hover:shadow-xl transition-shadow duration-500">
-      <Image priority={first} src={imageUrl} alt={title} title={title} width={384} height={216}
-        className="w-full aspect-video rounded-t-3xl bg-gray-200" />
+    <Link href={linkHref}
+      className="shadow-sm rounded-3xl flex flex-col group hover:shadow-xl transition-shadow duration-500">
+      <Image src={imageSrc} alt={name} title={name} width={384} height={216}
+        className="w-full aspect-video object-cover rounded-t-3xl bg-gray-200" />
       <div className="rounded-b-3xl flex-1 bg-white p-6 flex flex-col justify-between">
         <div>
           <h3 className="mb-3 flex items-center gap-3 text-2xl text-gray-900 group-active:text-teal-700 transition-colors duration-300">
-            <span>{title}</span>
+            <span>{name}</span>
             <span className="bg-gray-100 p-2 rounded-full group-active:bg-teal-700 transition-colors duration-300">
               <ArrowRightIcon className="size-6 stroke-gray-900 group-active:stroke-teal-100 transition-colors duration-300" />
             </span>
           </h3>
-          <p className="mb-6 text-gray-700">{description}</p>
+          <p className="text-gray-600">{description}</p>
         </div>
-
-        {tags && <div className="flex gap-1.5 flex-wrap">
-          {tags.map((tag, index) => {
-            return <span key={index} className="rounded-full py-1 px-3 bg-teal-50 text-teal-700 text-sm">
-              {tag}</span>
-          })}
-        </div>}
       </div>
     </Link>
   )

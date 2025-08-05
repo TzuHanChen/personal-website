@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { getBaseUrl } from "@/lib/url";
+
+const baseUrl = getBaseUrl();
 
 export const metadata: Metadata = {
   title: "關於我 | 陳子涵",
   description: "陳子涵的自我介紹",
-  icons: "/image/logo.svg", openGraph: {
-    type: "website",
-    url: process.env.NEXT_PUBLIC_FRONTEND_URL + '/about',
+  openGraph: {
+    url: `${baseUrl}/about`,
     title: "關於我 | 陳子涵",
     description: "陳子涵的自我介紹",
-    siteName: "陳子涵",
-    images: process.env.NEXT_PUBLIC_FRONTEND_URL + '/image/personal-website.png'
+    images: `${baseUrl}/image/personal-website.png`
   }
 };
 
@@ -123,12 +124,8 @@ function Skill() {
       tool: 'Next.js, React, Tailwind CSS, TypeScript, Headless UI, React Hook Form, styled-components'
     },
     {
-      skill: '版本控制',
-      tool: 'Git, GitHub, GitLab'
-    },
-    {
-      skill: '部署',
-      tool: 'Vercel, Zeabur'
+      skill: '版本控制、部署',
+      tool: 'Git, GitHub, GitLab, Vercel, Zeabur'
     },
     {
       skill: '使用者體驗、介面設計',
@@ -144,21 +141,14 @@ function Skill() {
           <h3 className="mb-3 text-2xl text-gray-900">{content[0].skill}</h3>
           <p className="text-gray-600">{content[0].tool}</p>
         </div>
-
         <div className="flex flex-col gap-6 md:w-1/2">
           <div>
             <h3 className="mb-3 text-2xl text-gray-900">{content[1].skill}</h3>
             <p className="text-gray-600">{content[1].tool}</p>
           </div>
-
           <div>
             <h3 className="mb-3 text-2xl text-gray-900">{content[2].skill}</h3>
             <p className="text-gray-600">{content[2].tool}</p>
-          </div>
-
-          <div>
-            <h3 className="mb-3 text-2xl text-gray-900">{content[3].skill}</h3>
-            <p className="text-gray-600">{content[3].tool}</p>
           </div>
         </div>
       </div>
@@ -190,7 +180,7 @@ function Recognition() {
         <h3 className="text-2xl text-gray-900">放視大賞　入圍</h3>
         <p className="text-gray-600">2021/05</p>
         <p className="text-gray-600">
-          畢業專題＂珍食力＂於 2021 放視大賞入圍行動應用類 - 軟體內容創意企劃組決賽。</p>
+          畢業專題＂珍食力＂有參加 2021 放視大賞，並有入圍行動應用類 - 軟體內容創意企劃組決賽。</p>
         <ul className="list-disc pl-5 text-gray-600">
           <li>使用者體驗、介面設計，Miro + Figma</li>
         </ul>
@@ -220,7 +210,7 @@ export default function About() {
       <Career />
       <Skill />
 
-      <section className="mx-auto w-full max-w-270 flex flex-col gap-16 xl:flex-row xl:gap-24 xl:*:w-1/3">
+      <section className="mx-auto w-full max-w-270 flex flex-col gap-16 xl:flex-row xl:*:w-1/3">
         <Certificate />
         <Recognition />
         <Education />
