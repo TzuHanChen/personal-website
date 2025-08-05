@@ -18,7 +18,7 @@ export default function Card({ linkHref, imageSrc, name, description }: {
               <ArrowRightIcon className="size-6 stroke-gray-900 group-active:stroke-teal-100 transition-colors duration-300" />
             </span>
           </h3>
-          <p className="text-gray-700">{description}</p>
+          <p className="text-gray-600">{description}</p>
         </div>
       </div>
     </Link>
