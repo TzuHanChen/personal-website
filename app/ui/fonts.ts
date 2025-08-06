@@ -1,9 +1,10 @@
-import { Noto_Sans_TC } from 'next/font/google';
-// import { Noto_Serif_TC, Noto_Color_Emoji, Fira_Code } from 'next/font/google';
+import { Noto_Sans_TC, Fira_Code } from 'next/font/google';
+// import { Noto_Serif_TC, Noto_Color_Emoji } from 'next/font/google';
 
-export const NotoSansTC = Noto_Sans_TC({
+export const notoSansTC = Noto_Sans_TC({
 	subsets: ['latin'],
 	weight: ['400', '700'],
+	fallback: ["sans-serif"],
 	display: 'swap',
 	variable: '--font-noto-sans-tc'
 });
@@ -21,9 +22,10 @@ export const NotoSansTC = Noto_Sans_TC({
 // 	display: 'swap',
 // });
 
-// export const FiraCode = Fira_Code({
-// 	subsets: ['latin'],
-// 	weight: ['400', '700'],
-// 	display: 'swap',
-// 	fallback: ['monospace']
-// });
+export const firaCode = Fira_Code({
+	subsets: ["latin"],
+	weight: ['400', '700'],
+	fallback: ["monospace"],
+	display: 'swap',
+	variable: "--font-fira-code",
+});
