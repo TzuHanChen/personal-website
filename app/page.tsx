@@ -1,11 +1,12 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FolderIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
-import { Project } from "@/lib/types";
-import Card from "@/app/ui/card";
+import Card, { Loading } from "@/app/ui/card";
 import PageButton from "@/app/ui/page-button";
 import { getBaseUrl } from "@/lib/url";
+import { Project } from "@/lib/types";
 
 const baseUrl = getBaseUrl();
 
@@ -69,7 +70,9 @@ function Projects() {
       <h2 className="text-4xl text-gray-900 md:text-5xl">專案</h2>
 
       <div className="flex justify-center gap-6 flex-wrap *:w-full *:max-w-96 sm:grid sm:grid-cols-2 lg:grid-cols-3">
-        <ProjectCards />
+        <Suspense fallback={<Loading />}>
+          <ProjectCards />
+        </Suspense>
         <PageButton title="所有專案" href="/project" />
       </div>
     </section>
@@ -90,7 +93,7 @@ function About() {
 
 export default function Home() {
   return (
-    <main className="bg-gray-50 py-24 px-6 flex flex-col gap-16 md:ml-20 md:px-24 lg:gap-24">
+    <main className="bg-gray-50 py-24 px-6 flex flex-col gap-16 text-gray-800 md:ml-20 md:px-24 lg:gap-24">
       <Hero />
       <Projects />
       <About />

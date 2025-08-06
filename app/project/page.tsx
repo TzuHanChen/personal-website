@@ -1,8 +1,9 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
-import { Project } from "@/lib/types";
-import Card from "@/app/ui/card";
+import Card, { Loading } from "@/app/ui/card";
 import PageButton from "@/app/ui/page-button";
 import { getBaseUrl } from "@/lib/url";
+import { Project } from "@/lib/types";
 
 const baseUrl = getBaseUrl();
 
@@ -55,7 +56,9 @@ export default function Projects() {
         </div>
 
         <div className="flex justify-center gap-6 flex-wrap *:w-full *:max-w-96 sm:grid sm:grid-cols-2 lg:grid-cols-3">
-          <ProjectCards />
+          <Suspense fallback={<Loading />}>
+            <ProjectCards />
+          </Suspense>
           <Updating />
           <PageButton title="前往舊版網站" outside href="https://tzuhanchen-archive.vercel.app/" />
         </div>

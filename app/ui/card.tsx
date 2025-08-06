@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { ArrowPathIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export default function Card({ linkHref, imageSrc, name, description }: {
   linkHref: string, imageSrc: string, name: string, description: string
@@ -27,8 +27,11 @@ export default function Card({ linkHref, imageSrc, name, description }: {
 
 export function Loading() {
   return (
-    <div className="rounded-3xl min-h-80 bg-white p-6 flex flex-col justify-center items-center">
-      <p className="mb-3 text-2xl">載入中 ...</p>
+    <div className="rounded-3xl min-h-80 bg-white p-6 flex flex-col justify-center items-center gap-6">
+      <div className="bg-gray-100 p-3 rounded-full">
+        <ArrowPathIcon className="size-9 stroke-gray-800 animate-spin" />
+      </div>
+      <p className="text-2xl text-gray-500">載入中 ...</p>
     </div>
   )
 }
