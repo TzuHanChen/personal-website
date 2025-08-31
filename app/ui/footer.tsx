@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPinIcon, EnvelopeIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
+import { CodeIcon, LocationOnIcon, MailIcon } from "./icons";
 
 export default function Footer() {
   return (
@@ -14,19 +14,19 @@ export default function Footer() {
           <span>陳子涵</span>
         </Link>
 
-        <div className="flex flex-col gap-3 *:flex *:items-center *:gap-2">
+        <div className="flex flex-col gap-4 *:flex *:gap-2">
           <p>
-            <MapPinIcon className="size-6 stroke-gray-700" />
+            <LocationOnIcon className="size-6 fill-gray-700" />
             <span>台灣，台北市</span>
           </p>
           <p>
-            <EnvelopeIcon className="size-6 stroke-gray-700" />
+            <MailIcon className="size-6 fill-gray-700" />
             <Link href='mailto:hahachentzuhan@gmail.com'
               className="underline hover:text-teal-600 active:text-teal-600 transition-colors duration-300">
               hahachentzuhan@gmail.com</Link>
           </p>
           <p>
-            <CodeBracketIcon className="size-6 stroke-gray-700" />
+            <CodeIcon className="size-6 fill-gray-700" />
             <Link href='https://github.com/TzuHanChen' target="_blank"
               className="underline hover:text-teal-600 active:text-teal-600 transition-colors duration-300">
               GitHub</Link>

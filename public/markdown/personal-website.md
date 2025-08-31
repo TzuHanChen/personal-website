@@ -52,20 +52,22 @@
 
 ---
 
-## 前端開發
+## 前後端開發
 
 ### 畫面切版、功能實作
 
-使用 Next.js App router + Tailwind CSS + Heroicons 製作畫面。使用 TypeScript 管理資料型別。如果需要管理較複雜的 className 再用 clsx。
+使用 Next.js App router + TypeScript + Tailwind CSS + Material Symbols 製作網頁畫面。
 
 ### 資料串接
 
-利用 route handler 實作 API，在網頁中呼叫 API、取得專案的資料、產生畫面。
+使用 TypeScript 撰寫 SQL 腳本，連接 Neon Serverless PostgreSQL 執行腳本，建立資料表並加入資料。
 
-* /api/project-data 所有專案的資料
-* /api/get-project-list 取得所有專案的清單
-* /api/get-project-content 取得一個專案的內容
-* /api/get-project-prevnext 取得前一個專案和下一個專案
+使用 Next.js route handler 實作 REST API，在網頁中呼叫 API、取得專案的資料、產生畫面。
+
+* /api/project/list 取得所有專案的清單
+* /api/project/content 取得一個專案的內容
+
+[API 文件](/api-doc)
 
 ### 優化
 
@@ -75,6 +77,8 @@
 
 使用 Google Analytics 和 Vercel Web Analytics 進行流量追蹤和使用者行為分析，同時利用 Google Search Console 監測搜尋曝光、排名與點閱率。
 
-### 部署
+### 版本控制與部署
 
-使用 Vercel 部署網站，同一個 GitHub repository 的兩個分支會分別產生測試網站和正式網站。
+使用 GitHub 管理版本，使用 Vercel 自動部署網站。
+
+[GitHub repo 原始碼](https://github.com/TzuHanChen/personal-website)

@@ -12,7 +12,7 @@
 
 前端
 
-* 使用 Next.js (App Router) + TypeScript + Tailwind CSS + Heroicons 製作頁面與功能邏輯
+* 使用 Next.js (App Router) + TypeScript + Tailwind CSS + Material Symbols 製作頁面與功能邏輯
 * 使用 fetch 串接自行實作的 REST API
 
 後端

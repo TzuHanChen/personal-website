@@ -2,11 +2,11 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { FolderIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 import Card, { Loading } from "@/app/ui/card";
 import PageButton from "@/app/ui/page-button";
 import { getBaseUrl } from "@/lib/url";
 import { Project } from "@/lib/types";
+import { DownloadIcon, WorkIcon } from "@/app/ui/icons";
 
 const baseUrl = getBaseUrl();
 
@@ -41,12 +41,12 @@ function Hero() {
       </p>
       <div className="mx-auto w-full max-w-144 flex justify-center gap-6 flex-wrap lg:justify-start">
         <Link href="/project" className="rounded-full bg-gray-800 py-3 px-6 flex items-center gap-1.5 hover:bg-teal-700 active:bg-teal-700 transition-colors duration-300 group">
-          <FolderIcon className="size-6 stroke-white group-hover:stroke-teal-100 group-active:stroke-teal-100 transition-colors duration-300" />
+          <WorkIcon className="size-6 fill-white group-hover:fill-teal-100 group-active:fill-teal-100 transition-colors duration-300" />
           <span className="text-white group-hover:text-teal-100 group-active:text-teal-100 transition-colors duration-300">瀏覽我的專案</span>
         </Link>
         <a href="/TzuHanChen_Resume_20250717.pdf" target="_blank" className="rounded-full border border-gray-700 py-3 px-6 flex items-center gap-1.5 hover:bg-gray-100 active:bg-gray-100 transition-colors duration-300 group">
-          <ArrowDownTrayIcon className="size-6" />
-          <span>下載我的履歷</span>
+          <DownloadIcon className="size-6 fill-gray-700" />
+          <span className="text-gray-700">下載我的履歷</span>
         </a>
       </div>
     </section>

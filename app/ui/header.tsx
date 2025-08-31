@@ -2,12 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import {
-  HomeIcon as HomeIconOutline, FolderIcon as FolderIconOutline, UserIcon as UserIconOutline
-} from '@heroicons/react/24/outline';
-import {
-  HomeIcon as HomeIconSolid, FolderIcon as FolderIconSolid, UserIcon as UserIconSolid
-} from '@heroicons/react/24/solid';
+import { HomeIcon, HomeIconFilled, WorkIcon, WorkIconFilled, ArticleIcon, ArticleIconFilled, PersonIcon, PersonIconFilled } from "./icons";
 
 function Button({ item, pathname }: {
   item: { name: string, href: string, iconDefault: JSX.Element, iconSelected: JSX.Element },
@@ -44,26 +39,26 @@ export default function Header() {
     {
       name: "首頁",
       href: "/",
-      iconDefault: <HomeIconOutline className={iconDefaultClassName} />,
-      iconSelected: <HomeIconSolid className={iconSelectedClassName} />,
+      iconDefault: <HomeIcon className={iconDefaultClassName} />,
+      iconSelected: <HomeIconFilled className={iconSelectedClassName} />,
     },
     {
       name: "專案",
       href: "/project",
-      iconDefault: <FolderIconOutline className={iconDefaultClassName} />,
-      iconSelected: <FolderIconSolid className={iconSelectedClassName} />,
+      iconDefault: <WorkIcon className={iconDefaultClassName} />,
+      iconSelected: <WorkIconFilled className={iconSelectedClassName} />,
     },
     // {
     //   name: "文章",
     //   href: "/article",
-    //   iconDefault: <FolderIconOutline className={iconDefaultClassName} />,
-    //   iconSelected: <FolderIconSolid className={iconSelectedClassName} />,
+    //   iconDefault: <ArticleIcon className={iconDefaultClassName} />,
+    //   iconSelected: <ArticleIconFilled className={iconSelectedClassName} />,
     // },
     {
       name: "關於我",
       href: "/about",
-      iconDefault: <UserIconOutline className={iconDefaultClassName} />,
-      iconSelected: <UserIconSolid className={iconSelectedClassName} />,
+      iconDefault: <PersonIcon className={iconDefaultClassName} />,
+      iconSelected: <PersonIconFilled className={iconSelectedClassName} />,
     },
   ];
 
