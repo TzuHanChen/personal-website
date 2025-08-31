@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import Card, { Loading } from "@/app/ui/card";
-import PageButton from "@/app/ui/page-button";
 import { getBaseUrl } from "@/lib/url";
 import { Project } from "@/lib/types";
 
@@ -19,21 +18,6 @@ export const metadata: Metadata = {
 };
 
 export const dynamic = 'force-dynamic';
-
-function Updating() {
-  return (
-    <div className="rounded-3xl min-h-80 bg-white p-6 flex flex-col justify-center gap-3">
-      <h3 className="mb-3 text-2xl">持續更新中 ...</h3>
-      <p className="text-gray-600">這裡是新版的個人網站，之後會</p>
-      <ol className="pl-5 list-decimal text-gray-600">
-        <li>加入舊版網站沒有的新專案</li>
-        <li>加入舊版網站的舊專案</li>
-        <li>加入舊版網站的文章</li>
-        <li>製作全新的小作品或專案</li>
-      </ol>
-    </div>
-  )
-}
 
 async function ProjectCards() {
   const res = await fetch(`${baseUrl}/api/project/list`);
@@ -59,8 +43,6 @@ export default function Projects() {
           <Suspense fallback={<Loading />}>
             <ProjectCards />
           </Suspense>
-          <Updating />
-          <PageButton title="前往舊版網站" outside href="https://tzuhanchen-archive.vercel.app/" />
         </div>
       </section>
     </main>

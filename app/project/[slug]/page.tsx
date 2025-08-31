@@ -38,7 +38,7 @@ function ProjectSideBar({ name, description, skills, link }:
   Pick<Project, 'name' | 'description' | 'skills' | 'link'>) {
   const skillTags = skills.map((skill) => {
     return <span key={skill.id}
-      className="rounded-full border border-teal-200 py-1 px-3 bg-teal-50 text-teal-700">
+      className="rounded-full py-1 px-3 bg-gray-100 text-gray-700">
       {skill.name}</span>
   })
   const linkType = link.startsWith('https://github.com') ? 'CODE'
