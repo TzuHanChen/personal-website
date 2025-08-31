@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/app/ui/header";
 import Footer from "@/app/ui/footer";
-import { NotoSansTC } from "@/app/ui/fonts";
+import { notoSansTC } from "@/app/ui/fonts";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -22,7 +22,7 @@ export default function RootLayout({ children }:
       <head>
         <GoogleAnalytics gaId="G-L1VLJWN6YZ" />
       </head>
-      <body className={`relative ${NotoSansTC.variable} font-noto-sans-tc selection:bg-teal-700 selection:text-teal-100`}>
+      <body className={`relative ${notoSansTC.variable} font-noto-sans-tc text-gray-800 selection:bg-teal-700 selection:text-teal-100`}>
         <Header />
         {children}
         <Footer />

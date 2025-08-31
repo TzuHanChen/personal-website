@@ -11,7 +11,7 @@ async function seedProjectsTable() {
       VALUES 
         (1, 'medical-forum', '醫療論壇', '供使用者發文討論醫療相關議題的網站', 'medical-forum.png', '', '2020/07 ~ 2020/08', '網站'),
         (2, 'max-value', '珍食力', '協助使用者充分運用食材的手機應用程式原型', 'max-value.png', '', '2020/11 ~ 2021/05', '手機應用程式原型'),
-        (3, 'tic-tac-toe', '井字遊戲', '可以穿梭時空的井字遊戲', 'in-progress.png', 'https://tic-tac-toe-tzuhanchen.vercel.app', '2023/01, 2025/08', '網頁'),
+        (3, 'tic-tac-toe', '井字遊戲', '可以穿梭時空的井字遊戲', 'tic-tac-toe.png', 'https://tic-tac-toe-tzuhanchen.vercel.app', '2023/01, 2025/08', '網頁'),
         (4, 'sticker-smash', '照片裝飾', '選擇照片、新增貼紙、拖曳與縮放貼紙、保存整個畫面到裝置中', 'sticker-smash.png', 'https://sticker-smash-tzuhanchen.vercel.app', '2023/10 ~ 2024/03', '網頁'),
         (5, 'nextjs-dashboard', '儀表板', '依照 Next.js 官方教學課程實作的網站', 'nextjs-dashboard.png', 'https://nextjs-dashboard-tzuhanchen.vercel.app', '2023/12 ~ 2024/02', '網站'),
         (6, 'teamie', 'Teamie', 'Teamie 致⼒為學⽣及初⼊職場的新鮮人媒合專案夥伴，打造跨專業、跨地區的合作機會', 'teamie.png', '', '2022/09 ~ 2024/12', '網站'),

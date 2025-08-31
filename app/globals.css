@@ -19,5 +19,6 @@
 }
 
 @theme {
-  --font-noto-sans-tc: "Noto Sans TC", sans-serif;
+  --font-noto-sans-tc: var(--font-noto-sans-tc);
+  --font-fira-code: var(--font-fira-code);
 }
