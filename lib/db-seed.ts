@@ -1,4 +1,4 @@
-import { sql, initProjectsTable, initSkillsTable, initProjectSkillTable, initRolesTable, initProjectMemberTable } from "@/lib/db-init";
+import { sql, initProjectsTable, initSkillsTable, initProjectSkillTable, initRolesTable, initProjectMemberTable, initArticlesTable, initTagsTable, initArticleTagTable } from "@/lib/db-init";
 
 async function seedProjectsTable() {
   try {
@@ -152,12 +152,75 @@ async function seedProjectMemberTable() {
   }
 }
 
+async function seedArticlesTable() {
+  try {
+    await initArticlesTable()
+
+    await sql`TRUNCATE TABLE articles RESTART IDENTITY CASCADE`
+
+    // (1, 'shopback-meet', 'ShopBack: Meet The Engineers!', '技術團隊分享會、自由交流', 'shopback-meet.png'),
+    // (3, 'database-camp', '資料庫體驗營', '學習 SQL 語法、設計資料表、查詢資料', 'database-camp.png'),
+
+    await sql`
+      INSERT INTO articles (id, slug, name, description, key_visual)
+      VALUES 
+        (2, 'digital-education', '數位人才', '參加 Google 數位人才探索計畫的期間留下的紀錄', 'digital-education.png')
+    `
+
+    console.log("articles table seeded successfully\n")
+  } catch (error) {
+    console.error("Error seeding articles table:", error, "\n")
+  }
+}
+
+async function seedTagsTable() {
+  try {
+    await initTagsTable()
+
+    await sql`TRUNCATE TABLE tags RESTART IDENTITY CASCADE`
+
+    await sql`
+      INSERT INTO tags (id, name)
+      VALUES 
+        (1, '活動紀錄'),
+        (2, '技術筆記')
+    `
+
+    console.log("tags table seeded successfully\n")
+  } catch (error) {
+    console.error("Error seeding tags table:", error, "\n")
+  }
+}
+
+async function seedArticleTagTable() {
+  try {
+    await initArticleTagTable()
+
+    await sql`TRUNCATE TABLE article_tag RESTART IDENTITY`
+
+    // (1, 1), (3, 1)
+
+    await sql`
+      INSERT INTO article_tag (article_id, tag_id)
+      VALUES 
+        (2, 1)
+    `
+
+    console.log("article_tag table seeded successfully\n")
+  } catch (error) {
+    console.error("Error seeding article_tag table:", error, "\n")
+  }
+}
+
 async function seedDatabase() {
   await seedProjectsTable()
   await seedSkillsTable()
   await seedProjectSkillTable()
   await seedRolesTable()
   await seedProjectMemberTable()
+  await seedArticlesTable()
+  await seedTagsTable()
+  await seedArticleTagTable()
 }
 
 seedDatabase()

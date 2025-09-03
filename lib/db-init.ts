@@ -99,3 +99,53 @@ export async function initProjectMemberTable() {
     throw error
   }
 }
+
+export async function initArticlesTable() {
+  try {
+    await sql`
+      CREATE TABLE IF NOT EXISTS articles (
+        id SERIAL PRIMARY KEY,
+        slug TEXT UNIQUE NOT NULL,
+        name TEXT NOT NULL,
+        description TEXT NOT NULL,
+        key_visual TEXT NOT NULL,
+        updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+      );
+    `
+    console.log("articles table initialized")
+  } catch (error) {
+    console.error("Error initializing articles table:", error)
+    throw error
+  }
+}
+
+export async function initTagsTable() {
+  try {
+    await sql`
+      CREATE TABLE IF NOT EXISTS tags (
+        id SERIAL PRIMARY KEY,
+        name TEXT UNIQUE NOT NULL
+      );
+    `
+    console.log("tags table initialized")
+  } catch (error) {
+    console.error("Error initializing tags table:", error)
+    throw error
+  }
+}
+
+export async function initArticleTagTable() {
+  try {
+    await sql`
+      CREATE TABLE IF NOT EXISTS article_tag (
+        article_id INTEGER REFERENCES articles(id) ON DELETE CASCADE,
+        tag_id INTEGER REFERENCES tags(id) ON DELETE CASCADE,
+        PRIMARY KEY (article_id, tag_id)
+      );
+    `
+    console.log("article_tag table initialized")
+  } catch (error) {
+    console.error("Error initializing article_tag table:", error)
+    throw error
+  }
+}

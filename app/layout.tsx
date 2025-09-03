@@ -21,6 +21,7 @@ export default function RootLayout({ children }:
     <html lang="zh-TW">
       <head>
         <GoogleAnalytics gaId="G-L1VLJWN6YZ" />
+        <meta name="google-site-verification" content="TgD1iWa0QYWph2aOQRPfXT81lrm368eqh1uvhp_U510" />
       </head>
       <body className={`relative ${notoSansTC.variable} font-noto-sans-tc text-gray-800 selection:bg-teal-700 selection:text-teal-100`}>
         <Header />
