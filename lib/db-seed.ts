@@ -162,9 +162,9 @@ async function seedArticlesTable() {
     // (3, 'database-camp', '資料庫體驗營', '學習 SQL 語法、設計資料表、查詢資料', 'database-camp.png'),
 
     await sql`
-      INSERT INTO articles (id, slug, name, description, key_visual)
+      INSERT INTO articles (id, slug, name, description, key_visual, created_at)
       VALUES 
-        (2, 'digital-education', '數位人才', '參加 Google 數位人才探索計畫的期間留下的紀錄', 'digital-education.png')
+        (2, 'digital-education', '數位人才', '參加 Google 數位人才探索計畫的期間留下的紀錄', 'digital-education.png', '2023-06-17 09:45:00+08')
     `
 
     console.log("articles table seeded successfully\n")

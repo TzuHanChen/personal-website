@@ -9,8 +9,8 @@ export type Project = {
   output: string,
   skills: Skill[],
   members: { id: number, role_name: Role["name"], members_name: string }[],
-  next: { slug: string, name: string, },
-  prev: { slug: string, name: string, },
+  next?: { slug: string, name: string, },
+  prev?: { slug: string, name: string, },
 }
 
 export type Skill = {
@@ -19,6 +19,24 @@ export type Skill = {
 }
 
 export type Role = {
+  id: number,
+  name: string,
+}
+
+export type Article = {
+  id: number,
+  slug: string,
+  name: string,
+  description: string,
+  key_visual: string,
+  tag: Tag,
+  created_at: Date,
+  updated_at: Date,
+  next?: { slug: string, name: string, },
+  prev?: { slug: string, name: string, },
+}
+
+export type Tag = {
   id: number,
   name: string,
 }
