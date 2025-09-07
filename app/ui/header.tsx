@@ -48,12 +48,12 @@ export default function Header() {
       iconDefault: <WorkIcon className={iconDefaultClassName} />,
       iconSelected: <WorkIconFilled className={iconSelectedClassName} />,
     },
-    // {
-    //   name: "文章",
-    //   href: "/article",
-    //   iconDefault: <ArticleIcon className={iconDefaultClassName} />,
-    //   iconSelected: <ArticleIconFilled className={iconSelectedClassName} />,
-    // },
+    {
+      name: "文章",
+      href: "/article",
+      iconDefault: <ArticleIcon className={iconDefaultClassName} />,
+      iconSelected: <ArticleIconFilled className={iconSelectedClassName} />,
+    },
     {
       name: "關於我",
       href: "/about",
@@ -65,8 +65,10 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-[calc(100%-80px)] inset-x-0 shadow-sm h-20 bg-teal-50 flex justify-center gap-2 md:inset-y-0 md:left-0 md:w-20 md:h-screen md:flex-col">
-      {list.map((item) => <Button key={item.href} item={item} pathname={pathname} />)}
+    <header className="fixed top-[calc(100%-80px)] inset-x-0 shadow-sm h-20 bg-teal-50 flex justify-center items-center md:inset-y-0 md:left-0 md:w-20 md:h-screen">
+      <div className='w-full max-w-96 flex justify-between md:max-h-96 md:flex-col'>
+        {list.map((item) => <Button key={item.href} item={item} pathname={pathname} />)}
+      </div>
     </header>
   )
 }

@@ -26,7 +26,7 @@
 
 我根據功能地圖列出需要儲存的資料、繪製實體關係模型圖。
 
-![醫療論壇成果一](/image/medical-forum-1.png)
+![醫療論壇成果一](/image/project/medical-forum-1.png)
 
 ### 介面流程圖、功能流程圖
 
@@ -51,7 +51,7 @@
 * 留言：新增留言
 * 追蹤：追蹤其他會員
 
-![醫療論壇成果二](/image/medical-forum-2.png)
+![醫療論壇成果二](/image/project/medical-forum-2.png)
 
 ## 結果報告
 

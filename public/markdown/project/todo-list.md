@@ -12,21 +12,21 @@
 
 列出使用者需要的各項功能。
 
-![需求分析](/image/todo-list-user-story.png)
+![需求分析](/image/project/todo-list-user-story.png)
 
 ### 流程規劃
 
 列出各項功能的位置和操作流程。
 
-![流程規劃](/image/todo-list-flow-chart.png)
+![流程規劃](/image/project/todo-list-flow-chart.png)
 
 ### 介面設計
 
 製作各頁面的線框圖，會重複使用的部分做成元件。任務卡片有做成可操作的原型。
 
-![線框圖](/image/todo-list-wireframes.png)
+![線框圖](/image/project/todo-list-wireframes.png)
 
-![元件](/image/todo-list-components.png)
+![元件](/image/project/todo-list-components.png)
 
 ---
 
@@ -38,17 +38,17 @@
 
 使用 Server Actions 串接自行實作的 REST API。
 
-![任務頁面](/image/todo-list-task.png)
+![任務頁面](/image/project/todo-list-task.png)
 
 ### 後端開發
 
 使用 TypeScript 撰寫 SQL 腳本，連接 Neon Serverless PostgreSQL 執行腳本，建立資料表並新增初始資料。
 
-![tasks 資料表](/image/todo-list-table.png)
+![tasks 資料表](/image/project/todo-list-table.png)
 
 使用 Next.js route handler 實作 REST API。
 
-![API 文件頁面](/image/todo-list-api-doc.png)
+![API 文件頁面](/image/project/todo-list-api-doc.png)
 
 ### 版本控制與部署
 

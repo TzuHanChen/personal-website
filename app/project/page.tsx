@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: `${baseUrl}/project`,
     title: "專案 | 陳子涵",
     description: "陳子涵的專案",
-    images: `${baseUrl}/image/personal-website.png`
+    images: `${baseUrl}/image/project/personal-website.png`
   }
 };
 
@@ -25,7 +25,7 @@ async function ProjectCards() {
 
   return projects.map((project: Project, index) =>
     <Card key={index} linkHref={`/project/${project.slug}`}
-      imageSrc={`/image/${project.key_visual}`}
+      imageSrc={`/image/project/${project.key_visual}`}
       name={project.name} description={project.description} />
   )
 }

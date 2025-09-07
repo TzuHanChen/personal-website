@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
         url: `${baseUrl}/project/${slug}`,
         title: `${project.name} | 陳子涵`,
         description: project.description,
-        images: `${baseUrl}/image/${project.key_visual}`
+        images: `${baseUrl}/image/project/${project.key_visual}`
       }
     }
   } else {
@@ -67,7 +67,7 @@ function ProjectContent({ key_visual, name, members, timeline, output, slug, pre
 
   return (
     <section className="py-24 px-6 flex flex-col gap-12 md:px-24 md:gap-16 lg:flex-1 lg:py-36 lg:px-12 lg:gap-24 xl:px-24">
-      <Image src={`/image/${key_visual}`} width={768} height={432} priority
+      <Image src={`/image/project/${key_visual}`} width={768} height={432} priority
         alt={`${name} 專案主視覺`} title={`${name} 專案主視覺`}
         className="mx-auto w-full max-w-192 aspect-video object-cover rounded-3xl bg-gray-300" />
 
@@ -84,13 +84,13 @@ function ProjectContent({ key_visual, name, members, timeline, output, slug, pre
         </div>
       </div>
 
-      <Markdown slug={slug} />
+      <Markdown slug={`project/${slug}`} />
 
       <div className="mx-auto w-full max-w-192 flex flex-col gap-6 md:flex-row *:flex-1">
-        <PageButton title={prev.name} subtitle="上一個專案" align="left"
-          href={`/project/${prev.slug}`} />
-        <PageButton title={next.name} subtitle="下一個專案" align="right"
-          href={`/project/${next.slug}`} />
+        {prev && <PageButton title={prev.name} subtitle="上一個專案" align="left"
+          href={`/project/${prev.slug}`} />}
+        {next && <PageButton title={next.name} subtitle="下一個專案" align="right"
+          href={`/project/${next.slug}`} />}
       </div>
     </section>
   )

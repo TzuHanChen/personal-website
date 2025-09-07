@@ -10,45 +10,45 @@
 
 先設定目的地再開始走路，寫下網站設計的方向、資源與限制。
 
-![設計概要](/image/personal-website-design-overview.png)
+![設計概要](/image/project/personal-website-design-overview.png)
 
 ### 資訊架構 Information Architecture
 
 觀察別人的個人 / 公司網站，每個頁面都有的共用區塊，以及個別頁面的內容，列出自己有要製作的區塊、頁面與內容。
 
-![資訊架構](/image/personal-website-information-architecture.png)
+![資訊架構](/image/project/personal-website-information-architecture.png)
 
 ### 使用者故事 User Story
 
 列出網站使用者可以做的事。
 
-![使用者故事](/image/personal-website-user-story.png)
+![使用者故事](/image/project/personal-website-user-story.png)
 
 ### 功能規劃 Functions
 
 列出網站使用者會用到的功能。
 
-![功能規劃](/image/personal-website-functions.png)
+![功能規劃](/image/project/personal-website-functions.png)
 
 ### 功能流程圖 Flow Chart
 
 列出網站使用者在每個頁面或區塊中可以透過哪些行為前往其他頁面。
 
-![功能流程圖](/image/personal-website-flow-chart.png)
+![功能流程圖](/image/project/personal-website-flow-chart.png)
 
 ### 介面流程圖 UI Flow
 
 列出每個頁面或區塊之間的關聯。
 
-![介面流程圖](/image/personal-website-ui-flow.png)
+![介面流程圖](/image/project/personal-website-ui-flow.png)
 
 ### 線框圖 Wireframe、原型 Prototype
 
 製作每個頁面的線框圖，把各種會重複使用的部分做成元件。頁首直接使用 Material Design 3 的元件，手機是 Navigation Bar，平板和電腦則是 Navigation Rail。跳過設計稿 (Mockup) 步驟，後續色彩配置直接使用 Tailwind CSS 預設調色盤的 Gray 和 Teal 相關色階。完成線框圖之後串連每個按鈕與點擊按鈕後要前往的頁面，做成可以操作的原型，確保每個網頁區塊的位置和操作流程都正確。
 
-![元件](/image/personal-website-components.png)
+![元件](/image/project/personal-website-components.png)
 
-![線框圖](/image/personal-website-wireframe.png)
+![線框圖](/image/project/personal-website-wireframe.png)
 
 ---
 

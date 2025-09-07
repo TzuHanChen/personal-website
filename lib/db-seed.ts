@@ -158,13 +158,13 @@ async function seedArticlesTable() {
 
     await sql`TRUNCATE TABLE articles RESTART IDENTITY CASCADE`
 
-    // (1, 'shopback-meet', 'ShopBack: Meet The Engineers!', '技術團隊分享會、自由交流', 'shopback-meet.png'),
     // (3, 'database-camp', '資料庫體驗營', '學習 SQL 語法、設計資料表、查詢資料', 'database-camp.png'),
 
     await sql`
-      INSERT INTO articles (id, slug, name, description, key_visual)
+      INSERT INTO articles (id, slug, name, description, key_visual, created_at)
       VALUES 
-        (2, 'digital-education', '數位人才', '參加 Google 數位人才探索計畫的期間留下的紀錄', 'digital-education.png')
+        (1, 'shopback-meet', 'ShopBack: Meet The Engineers!', '技術團隊分享會、自由交流', 'shopback-meet.png', '2022-10-27 15:00:00+08'),
+        (2, 'digital-education', '數位人才探索計畫', '參加 Google 數位人才探索計畫的期間留下的紀錄', 'digital-education.png', '2023-04-17 13:11:00+08')
     `
 
     console.log("articles table seeded successfully\n")
@@ -198,12 +198,12 @@ async function seedArticleTagTable() {
 
     await sql`TRUNCATE TABLE article_tag RESTART IDENTITY`
 
-    // (1, 1), (3, 1)
+    // (3, 1)
 
     await sql`
       INSERT INTO article_tag (article_id, tag_id)
       VALUES 
-        (2, 1)
+        (1, 1), (2, 1)
     `
 
     console.log("article_tag table seeded successfully\n")

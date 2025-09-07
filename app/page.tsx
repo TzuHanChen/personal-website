@@ -5,7 +5,7 @@ import Link from "next/link";
 import Card, { Loading } from "@/app/ui/card";
 import PageButton from "@/app/ui/page-button";
 import { getBaseUrl } from "@/lib/url";
-import { Project } from "@/lib/types";
+import { Article, Project } from "@/lib/types";
 import { DownloadIcon, WorkIcon } from "@/app/ui/icons";
 
 const baseUrl = getBaseUrl();
@@ -79,6 +79,32 @@ function Projects() {
   )
 }
 
+async function ArticleCards() {
+  const res = await fetch(`${baseUrl}/api/article/list?count=5`);
+  const articles: Article[] = await res.json();
+
+  return articles.map((article: Article, index) =>
+    <Card key={index} linkHref={`/article/${article.slug}`}
+      imageSrc={`/image/article/${article.key_visual}`}
+      name={article.name} description={article.description} />
+  )
+}
+
+function Articles() {
+  return (
+    <section className="mx-auto w-full max-w-270 flex flex-col gap-6 lg:gap-9">
+      <h2 className="text-4xl text-gray-900 md:text-5xl">文章</h2>
+
+      <div className="flex justify-center gap-6 flex-wrap *:w-full *:max-w-96 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+        <Suspense fallback={<Loading />}>
+          <ArticleCards />
+        </Suspense>
+        <PageButton title="所有文章" href="/article" />
+      </div>
+    </section>
+  )
+}
+
 function About() {
   return (
     <section className="mx-auto max-w-144 flex flex-col gap-6 lg:gap-9">
@@ -96,6 +122,7 @@ export default function Home() {
     <main className="bg-gray-50 py-24 px-6 flex flex-col gap-16 text-gray-800 md:ml-20 md:px-24 lg:gap-24">
       <Hero />
       <Projects />
+      <Articles />
       <About />
     </main>
   )

@@ -2,11 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowForwardIcon, ProgressActivityIcon } from "./icons";
 
-export default function Card({ linkHref, imageSrc, name, description }: {
-  linkHref: string, imageSrc: string, name: string, description: string
+export default function Card({ linkHref, imageSrc, name, description, newTab }: {
+  linkHref: string, imageSrc: string, name: string, description: string, newTab?: boolean
 }) {
   return (
-    <Link href={linkHref}
+    <Link href={linkHref} target={newTab ? '_blank' : '_self'}
       className="shadow-sm rounded-3xl flex flex-col group hover:shadow-xl transition-shadow duration-500">
       <Image src={imageSrc} alt={name} title={name} width={384} height={216}
         className="w-full aspect-video object-cover rounded-t-3xl bg-gray-200" />
