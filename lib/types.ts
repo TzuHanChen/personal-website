@@ -29,9 +29,9 @@ export type Article = {
   name: string,
   description: string,
   key_visual: string,
-  tag: Tag,
-  created_at: Date,
-  updated_at: Date,
+  tag: Tag['name'],
+  created_at: string,
+  updated_at: string,
   next?: { slug: string, name: string, },
   prev?: { slug: string, name: string, },
 }

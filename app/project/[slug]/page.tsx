@@ -87,10 +87,10 @@ function ProjectContent({ key_visual, name, members, timeline, output, slug, pre
       <Markdown slug={slug} />
 
       <div className="mx-auto w-full max-w-192 flex flex-col gap-6 md:flex-row *:flex-1">
-        <PageButton title={prev.name} subtitle="上一個專案" align="left"
-          href={`/project/${prev.slug}`} />
-        <PageButton title={next.name} subtitle="下一個專案" align="right"
-          href={`/project/${next.slug}`} />
+        {prev && <PageButton title={prev.name} subtitle="上一個專案" align="left"
+          href={`/project/${prev.slug}`} />}
+        {next && <PageButton title={next.name} subtitle="下一個專案" align="right"
+          href={`/project/${next.slug}`} />}
       </div>
     </section>
   )
