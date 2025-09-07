@@ -18,7 +18,7 @@
 
 根據人物誌的使用者需求與團隊夥伴們的期望，製作顧客旅程地圖，發散出各種可以做的功能，收斂成確定要做的功能，劃分數個版本與各版本的目標。網站初期版本以刊登專案的功能為核心目標。
 
-![主打功能](/image/teamie-index.png)
+![主打功能](/image/project/teamie-index.png)
 
 ### 資料架構
 
@@ -32,7 +32,7 @@
 
 和夥伴們討論後確定品牌調性關鍵字為＂溫度與效率＂，參與平台名稱與標誌的發想和投票過程。
 
-![關於提米](/image/teamie-about.png)
+![關於提米](/image/project/teamie-about.png)
 
 ### 介面設計
 
@@ -59,8 +59,8 @@
 
 閱讀後端夥伴提供的 Swagger 文件，利用 Postman 測試再串接 RESTful API，溝通調整 API 的功能和 JSON 內容格式。
 
-![登入畫面](/image/teamie-login.png)
+![登入畫面](/image/project/teamie-login.png)
 
-![專案資訊](/image/teamie-project.png)
+![專案資訊](/image/project/teamie-project.png)
 
-![個人資訊](/image/teamie-user.png)
+![個人資訊](/image/project/teamie-user.png)
