@@ -164,7 +164,7 @@ async function seedArticlesTable() {
       INSERT INTO articles (id, slug, name, description, key_visual, created_at)
       VALUES 
         (1, 'shopback-meet', 'ShopBack: Meet The Engineers!', '技術團隊分享會、自由交流', 'shopback-meet.png', '2022-10-27 15:00:00+08'),
-        (2, 'digital-education', '數位人才', '參加 Google 數位人才探索計畫的期間留下的紀錄', 'digital-education.png', '2023-06-17 09:45:00+08')
+        (2, 'digital-education', '數位人才探索計畫', '參加 Google 數位人才探索計畫的期間留下的紀錄', 'digital-education.png', '2023-04-17 13:11:00+08')
     `
 
     console.log("articles table seeded successfully\n")
