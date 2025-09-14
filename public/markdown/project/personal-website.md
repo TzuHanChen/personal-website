@@ -56,11 +56,15 @@
 
 ### 畫面切版、功能實作
 
-使用 Next.js App router + TypeScript + Tailwind CSS + Material Symbols 製作網頁畫面。
+使用 Next.js App router + TypeScript + Tailwind CSS + Material Symbols 製作網頁畫面、設定 SEO 資訊。
 
 ### 資料串接
 
 使用 TypeScript 撰寫 SQL 腳本，連接 Neon Serverless PostgreSQL 執行腳本，建立資料表並加入資料。
+
+![專案資料表](/image/project/personal-website-table-projects.png)
+
+![文章資料表](/image/project/personal-website-table-articles.png)
 
 使用 Next.js route handler 實作 REST API，在網頁中呼叫 API、取得專案的資料、產生畫面。
 
