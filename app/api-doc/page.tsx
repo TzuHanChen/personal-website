@@ -9,7 +9,7 @@ function PathMethodList() {
           <pre className="font-bold">/api/project/list</pre>
         </a>
         <div className="p-3 flex flex-col gap-3">
-          <Method method={"GET"} description="取得專案清單資料" />
+          <Method method="GET" description="取得專案清單資料" />
         </div>
       </div>
       <div className="border border-gray-200">
@@ -18,6 +18,22 @@ function PathMethodList() {
         </a>
         <div className="p-3 flex flex-col gap-3">
           <Method method="GET" description="取得專案內容資料" />
+        </div>
+      </div>
+      <div className="border border-gray-200">
+        <a className="block bg-gray-100 p-3" href="#api-article-list">
+          <pre className="font-bold">/api/article/list</pre>
+        </a>
+        <div className="p-3 flex flex-col gap-3">
+          <Method method="GET" description="取得文章清單資料" />
+        </div>
+      </div>
+      <div className="border border-gray-200">
+        <a className="block bg-gray-100 p-3" href="#api-article-content">
+          <pre className="font-bold">/api/article/content</pre>
+        </a>
+        <div className="p-3 flex flex-col gap-3">
+          <Method method="GET" description="取得文章內容資料" />
         </div>
       </div>
     </section>
@@ -225,6 +241,70 @@ function Paths() {
     "prev": {
       "slug": "todo-list",
       "name": "待辦清單"
+    }
+  }
+}
+
+{ status: 404, error: "slug not provided" }
+
+{ status: 404, error: "slug does not exist" }
+
+{ status: 500, error: "System error, please try again later" }`} />
+    </Path>
+    
+    <Path path="/article/list" description="文章清單">
+      <Method method={"GET"} description="取得專案清單資料" />
+      <SearchParams searchParams={[
+        {
+          name: 'count',
+          type: 'number',
+          required: false,
+          rule: '正整數'
+        },
+      ]} />
+      <ResponseExample responseExample={
+        `{
+  status: 200, body: [
+    {
+      "slug": "digital-education",
+      "key_visual": "digital-education.png",
+      "name": "數位人才探索計畫",
+      "description": "參加 Google 數位人才探索計畫的期間留下的紀錄"
+    }
+  ]
+}
+
+{ status: 500, error: "System error, please try again later" }`} />
+    </Path>
+
+    <Path path="/article/content" description="文章內容">
+      <Method method="GET" description="取得專案內容資料" />
+      <SearchParams searchParams={[
+        {
+          name: 'slug',
+          type: 'string',
+          required: true,
+          rule: ''
+        },
+      ]} />
+      <ResponseExample responseExample={
+        `{
+  status: 200, body: {
+    "id": 2,
+    "slug": "digital-education",
+    "name": "數位人才探索計畫",
+    "description": "參加 Google 數位人才探索計畫的期間留下的紀錄",
+    "key_visual": "digital-education.png",
+    "created_at": "2023-04-17T05:11:00.000Z",
+    "updated_at": "2025-09-07T15:34:22.427Z",
+    "tag": "活動紀錄",
+    "next": {
+      "slug": "shopback-meet",
+      "name": "ShopBack: Meet The Engineers!"
+    },
+    "prev": {
+      "slug": "shopback-meet",
+      "name": "ShopBack: Meet The Engineers!"
     }
   }
 }

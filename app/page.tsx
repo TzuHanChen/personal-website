@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: baseUrl,
     title: "陳子涵",
     description: "陳子涵的個人網站",
-    images: `${baseUrl}/image/personal-website.png`
+    images: `${baseUrl}/image/project/personal-website.png`
   }
 };
 
