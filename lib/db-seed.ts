@@ -158,14 +158,13 @@ async function seedArticlesTable() {
 
     await sql`TRUNCATE TABLE articles RESTART IDENTITY CASCADE`
 
-    // (3, 'database-camp', '資料庫體驗營', '學習 SQL 語法、設計資料表、查詢資料', 'database-camp.png'),
-
     await sql`
       INSERT INTO articles (id, slug, name, description, key_visual, created_at)
       VALUES 
         (1, 'shopback-meet', 'ShopBack: Meet The Engineers!', '技術團隊分享會、自由交流', 'shopback-meet.png', '2022-10-27 15:00:00+08'),
-        (2, 'digital-education', '數位人才探索計畫', '參加 Google 數位人才探索計畫的期間留下的紀錄', 'digital-education.png', '2023-04-17 13:11:00+08')
+        (2, 'digital-education', '數位人才探索計畫', 'Google Analytics 4 學習與測驗、職缺人才媒合活動', 'digital-education.png', '2023-04-17 13:11:00+08')
     `
+    // (3, 'database-camp-1', '資料庫體驗營 - 前言', '學習 SQL 語法、設計資料表、查詢資料', 'database-camp.png', '2024-10-24 17:00:00+08'),
 
     console.log("articles table seeded successfully\n")
   } catch (error) {
@@ -185,6 +184,7 @@ async function seedTagsTable() {
         (1, '活動紀錄'),
         (2, '技術筆記')
     `
+    // (3, '課程紀錄')
 
     console.log("tags table seeded successfully\n")
   } catch (error) {
@@ -198,13 +198,12 @@ async function seedArticleTagTable() {
 
     await sql`TRUNCATE TABLE article_tag RESTART IDENTITY`
 
-    // (3, 1)
-
     await sql`
       INSERT INTO article_tag (article_id, tag_id)
       VALUES 
         (1, 1), (2, 1)
     `
+    // (3, 3)
 
     console.log("article_tag table seeded successfully\n")
   } catch (error) {
