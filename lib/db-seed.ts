@@ -162,9 +162,18 @@ async function seedArticlesTable() {
       INSERT INTO articles (id, slug, name, description, key_visual, created_at)
       VALUES 
         (1, 'shopback-meet', 'ShopBack: Meet The Engineers!', '技術團隊分享會、自由交流', 'shopback-meet.png', '2022-10-27 15:00:00+08'),
-        (2, 'digital-education', '數位人才探索計畫', 'Google Analytics 4 學習與測驗、職缺人才媒合活動', 'digital-education.png', '2023-04-17 13:11:00+08')
+        (2, 'digital-education', '數位人才探索計畫', 'Google Analytics 4 學習與測驗、職缺人才媒合活動', 'digital-education.png', '2023-04-17 13:11:00+08'),
+        (3, 'database-camp-10', '資料庫體驗營 #10 結語', '資料庫練習網站、加碼影音錄影的時間軸、完課獎勵證書、未來規畫', 'database-camp-10.png', '2025-12-30 17:30:00+08'),
+        (4, 'database-camp-09', '資料庫體驗營 #09 分析與應用', 'ORDER BY 排序資料、GROUP BY 分組資料、子查詢 (Subquery)', 'database-camp-09.png', '2025-12-30 17:30:00+08'),
+        (5, 'database-camp-08', '資料庫體驗營 #08 任務二', '以健身教練線上直播課平台為主題，使用網站或是本地開發軟體撰寫 SQL 指令', 'database-camp-08.png', '2025-12-30 17:30:00+08'),
+        (6, 'database-camp-07', '資料庫體驗營 #07 直播課程錄影', '四堂直播課程錄影的時間軸', 'database-camp-07.png', '2025-12-30 17:30:00+08'),
+        (7, 'database-camp-06', '資料庫體驗營 #06 任務一', '安裝本地開發所需軟體', 'database-camp-06.png', '2025-12-30 17:30:00+08'),
+        (8, 'database-camp-05', '資料庫體驗營 #05 資料表合併', '四種 JOIN 的用法', 'database-camp-05.png', '2025-12-30 17:30:00+08'),
+        (9, 'database-camp-04', '資料庫體驗營 #04 資料表管理', '主鍵 PK、外鍵 FK、合併資料表 JOIN、常用函式', 'database-camp-04.png', '2025-12-30 17:30:00+08'),
+        (10, 'database-camp-03', '資料庫體驗營 #03 作業一', '撰寫 SQL 指令查詢家具店的庫存資料', 'database-camp-03.png', '2025-12-30 17:30:00+08'),
+        (11, 'database-camp-02', '資料庫體驗營 #02 基礎語法', '資料庫簡介、建立資料表、資料 CRUD', 'database-camp-02.png', '2025-12-30 17:30:00+08'),
+        (12, 'database-camp-01', '資料庫體驗營 #01 簡介', '報名參加此課程的理由、課程內容介紹、行事曆、Discord 自我介紹', 'database-camp-01.png', '2025-12-30 17:30:00+08')
     `
-    // (3, 'database-camp-1', '資料庫體驗營 - 前言', '學習 SQL 語法、設計資料表、查詢資料', 'database-camp.png', '2024-10-24 17:00:00+08'),
 
     console.log("articles table seeded successfully\n")
   } catch (error) {
@@ -182,9 +191,9 @@ async function seedTagsTable() {
       INSERT INTO tags (id, name)
       VALUES 
         (1, '活動紀錄'),
-        (2, '技術筆記')
+        (2, '技術筆記'),
+        (3, '課程紀錄')
     `
-    // (3, '課程紀錄')
 
     console.log("tags table seeded successfully\n")
   } catch (error) {
@@ -201,9 +210,10 @@ async function seedArticleTagTable() {
     await sql`
       INSERT INTO article_tag (article_id, tag_id)
       VALUES 
-        (1, 1), (2, 1)
+        (1, 1), (2, 1),
+        (3, 3), (4, 3), (5, 3), (6, 3), (7, 3),
+        (8, 3), (9, 3), (10, 3), (11, 3), (12, 3)
     `
-    // (3, 3)
 
     console.log("article_tag table seeded successfully\n")
   } catch (error) {
