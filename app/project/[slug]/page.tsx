@@ -66,7 +66,7 @@ function ProjectContent({ key_visual, name, members, timeline, output, slug, pre
   })
 
   return (
-    <section className="py-24 px-6 flex flex-col gap-12 md:px-24 md:gap-16 lg:flex-1 lg:py-36 lg:px-12 lg:gap-24 xl:px-24">
+    <section className="py-24 px-6 flex flex-col gap-12 md:px-24 md:gap-16 lg:w-[calc(100%-24rem)] lg:py-36 lg:px-12 lg:gap-24 xl:px-24">
       <Image src={`/image/project/${key_visual}`} width={768} height={432} priority
         alt={`${name} 專案主視覺`} title={`${name} 專案主視覺`}
         className="mx-auto w-full max-w-192 aspect-video object-cover rounded-3xl bg-gray-300" />
