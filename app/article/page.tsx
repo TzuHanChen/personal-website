@@ -43,9 +43,6 @@ export default function Articles() {
           <Suspense fallback={<Loading />}>
             <ArticleCards />
           </Suspense>
-          <Card linkHref="https://tzuhanchen.github.io/arete-internship"
-            imageSrc="/image/article/arete-internship.png"
-            name="亞瑞特實習" description="實習日誌與任務成果" newTab={true} />
         </div>
       </section>
     </main>
